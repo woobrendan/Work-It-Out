@@ -5,12 +5,6 @@ VALUES ('Matt Campbell', 'matt@gmail.com', 'test'),
 ('Andrea Caldarelli', 'andrea@lamborghini.com','test'),
 ('Rafaelle Marciello', 'rm@mercedes.com', 'test');
 
--- INSERT INTO workout_stats (weight, rep, set, user_id)
--- VALUES
--- (160, 5, 3, 1),
--- ()
-
-
 INSERT INTO exercises (title, description, thumbnail, video, muscle_group)
 VALUES
 ('Barbell Bench Press', 'The Barbell Bench Press is an upper-body weight training exercise where you push a weight upwards while lying on a weight training bench. The exercise uses the pectoralis major, the anterior deltoids, and the triceps, among other stabilizing muscles.', 'https://www.burnthefatinnercircle.com/members/images/1691.jpg', 'https://www.youtube.com/embed/CjHIKDQ4RQo', 'Chest'),
@@ -30,3 +24,12 @@ VALUES
 ('Tricep Pushdown', 'The tricep pushdown is a variation of the tricep extension, an isolation exercise which targets the tricep muscles on the back of your upper arm. This variation uses the cable pulley machine which places a constant source of tension on the muscle, which is great for hypertrophy.', 'https://www.burnthefatinnercircle.com/members/images/1683b.jpg?cb=20220105104735', 'https://www.youtube.com/embed/LXkCrxn3caQ', 'Triceps'),
 ('Hammer Curls', 'The hammer curl is a bicep curl variation which works the biceps, as well as the brachialis (the muscles on the outside of your arms) and the brachioradialis (the forearm). The hammer curl is great for anyone who wants to build wider arms!', 'https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Hammer-Curl_da9fea8b-fc81-4a4f-9af1-aea1b85239d7_600x600.png?v=1612137282', 'https://www.youtube.com/embed/B4RznoFvTl4', 'Arms');
 
+
+INSERT INTO workout_lists(user_id, exercise_id)
+VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5),
+(2, 6);
