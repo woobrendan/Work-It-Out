@@ -1,7 +1,6 @@
-DROP TABLE IF EXISTS contributions CASCADE;
-DROP TABLE IF EXISTS user_favourites CASCADE;
-DROP TABLE IF EXISTS map_points CASCADE;
-DROP TABLE IF EXISTS maps CASCADE;
+DROP TABLE IF EXISTS exercises CASCADE;
+DROP TABLE IF EXISTS workout_stats CASCADE;
+DROP TABLE IF EXISTS workout_lists CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
@@ -11,10 +10,25 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE workouts (
+CREATE TABLE exercises (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   title VARCHAR(255),
   description TEXT,
-  thumbnail VARCHAR(255)
+  thumbnail TEXT,
+  video VARCHAR(255),
+  muscle_group VARCHAR(255)
+);
+
+CREATE TABLE workout_stats (
+  id SERIAL PRIMARY KEY NOT NULL,
+  weight INTEGER,
+  reps INTEGER,
+  sets INTEGER
+);
+
+CREATE TABLE workout_lists (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  exercise_id INTEGER REFERENCES exercises(id) ON DELETE CASCADE,
+  workout_stat_id INTEGER REFERENCES workout_stats(id) ON DELETE CASCADE
 );
