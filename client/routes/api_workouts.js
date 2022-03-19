@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = function(db) {
-  // route = /api/exercises
+  // route = /api/workouts
   router.get('/', (req, res) => {
     const queryString = `
     SELECT * FROM workouts;`
