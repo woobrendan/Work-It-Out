@@ -32,5 +32,23 @@ module.exports = function(db) {
     .catch(err => console.log(err.message));
 });
 
+// api/users/new
+router.post('/new', (req, res) => {
+  const user = req.body
+  const queryString = `INSERT INTO users(name, email, password, birthdate) VALUES($1, $2, $3, $4) RETURNING *;`;
+  const values = [user.name, user.email, user.password, user.birthdate];
+  return db
+    .query(queryString, values)
+    .then(result => {
+      if (!result) {
+        res.send({error: "error"});
+        return;
+      }
+      // set token in local storage to new user
+        // TBD
+      res.redirect('/');
+    })
+  });
+
   return router;
 }
