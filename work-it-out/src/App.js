@@ -13,8 +13,6 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<Homepage />} />
-        </Routes>
-        <Routes>
           <Route path='/exercises/:id' element={<ExercisePage />} />
         </Routes>
       </div>
