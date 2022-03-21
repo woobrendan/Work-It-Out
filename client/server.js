@@ -25,7 +25,6 @@ const apiMuscleGroups = require('./routes/api/api_muscle_groups');
 const apiWorkouts = require('./routes/api/api_workouts');
 
 app.use('/users', userRoute(pool, jwt));
-
 /////  API ROUTES /////
 app.use('/api/users', apiUsers(pool));
 app.use('/api/exercises', apiExercises(pool));
