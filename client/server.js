@@ -23,6 +23,7 @@ const apiUsers = require('./routes/api/api_users');
 const apiExercises = require('./routes/api/api_exercises');
 const apiMuscleGroups = require('./routes/api/api_muscle_groups');
 const apiWorkouts = require('./routes/api/api_workouts');
+const apiStats = require('./routes/api/api_workout_stats');
 
 app.use('/users', userRoute(pool, jwt));
 /////  API ROUTES /////
@@ -30,5 +31,6 @@ app.use('/api/users', apiUsers(pool));
 app.use('/api/exercises', apiExercises(pool));
 app.use('/api/muscleGroups', apiMuscleGroups(pool));
 app.use('/api/workouts', apiWorkouts(pool));
+app.use('/api/workoutStats', apiStats(pool));
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`));
