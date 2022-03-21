@@ -11,34 +11,25 @@ const jwt = require('jsonwebtoken');
 const authenticateToken = require('./helper/authToken')
 // serve static files (img, css, js) from directoty 'public'
 app.use(express.static("public"));
-
-//database import
-const pool = require("./lib/db.js");
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 // app.use(authenticateToken)
 
+//database import
+const pool = require("./lib/db.js");
+
 const userRoute = require('./routes/users');
+const apiUsers = require('./routes/api/api_users');
+const apiExercises = require('./routes/api/api_exercises');
+const apiMuscleGroups = require('./routes/api/api_muscle_groups');
+const apiWorkouts = require('./routes/api/api_workouts');
+
 app.use('/users', userRoute(pool, jwt));
 
-
-///////////API Route Handlers/////////
-// Users
-const apiUsers = require('./routes/api/api_users');
+/////  API ROUTES /////
 app.use('/api/users', apiUsers(pool));
-
-// Exercises
-const apiExercises = require('./routes/api/api_exercises');
 app.use('/api/exercises', apiExercises(pool));
-
-// Muscle Groups
-const apiMuscleGroups = require('./routes/api/api_muscle_groups');
 app.use('/api/muscleGroups', apiMuscleGroups(pool));
-
-// Workouts
-const apiWorkouts = require('./routes/api/api_workouts');
 app.use('/api/workouts', apiWorkouts(pool));
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`));
