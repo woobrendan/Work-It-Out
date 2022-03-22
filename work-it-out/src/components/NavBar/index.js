@@ -9,7 +9,9 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       <div>
-        <PersonRoundedIcon />
+        <Link to="/profile">
+          <PersonRoundedIcon />
+        </Link>
         <div>
           <span>
             <Link to="/login">Login</Link>
