@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import {Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
@@ -10,9 +10,20 @@ export default function NavBar() {
     <nav className="navbar">
       <div>
         <PersonRoundedIcon />
+        <div>
+          <span>
+            <Link to="/login">Login</Link>
+          </span>
+        </div>
+        <div>
+          <span>
+            <Link to="/register">Register</Link>
+          </span>
+        </div>
       </div>
+
       <div>
-        <Link to ="/">
+        <Link to="/">
           <span> Work It Out </span>
         </Link>
       </div>
