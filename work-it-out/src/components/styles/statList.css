@@ -3,5 +3,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3%;
+  padding: 5%;
+  border: 2px solid;
+  height: 125px;
+}
+
+.statListItem img {
+  object-fit: contain;
+  height: 125px;
+  width: 125px;
+}
+
+table,
+th,
+td {
+  border: 2px solid;
+  padding: 5px;
+  text-align: center;
+}
+
+.statList button {
+  margin: 0 auto;
+  display: block;
 }
