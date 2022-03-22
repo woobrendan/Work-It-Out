@@ -42,31 +42,31 @@ VALUES
 ('Overhead Tricep Extension', 'Your triceps are the biggest muscles in your arms, so make sure not to neglect them! The overheard tricep extension is a great tricep isolation exercise.', 'https://www.spotebi.com/wp-content/uploads/2014/10/dumbbell-triceps-extension-exercise-illustration.jpg', 'https://www.youtube.com/embed/9wxRhONFsRA', 12, 3, 5),
 ('Tricep Kickback', 'The triceps are the muscles on the back of your upper arms. They start at the shoulders and run down to the elbow, and are responsible for extending the elbows. Tricep kickbacks are an isolation exercise which can help to build your tricep strength and size.', 'https://cdn.shopify.com/s/files/1/1075/8446/files/exercise-47.jpg?0', 'https://www.youtube.com/embed/JPmbMOu4IYw', 12, 3, 5);
 
-
-INSERT INTO workout_stats(weight, reps, sets, user_id, exercise_id)
-VALUES
-(160, 5, 3, 1, 1),
-(130, 6, 3, 1, 2),
-(80, 12, 4, 1, 3),
-(40, 12, 3, 1, 16),
-(0, 20, 3, 1, 17),
-(30, 10, 3, 2, 4),
-(20, 12, 3, 2, 5),
-(40, 10, 5, 2, 6),
-(20, 12, 3, 2, 18),
-(45, 15, 4, 2, 19),
-(200, 3, 4, 5, 7),
-(130, 12, 3, 5, 8),
-(120, 10, 3, 5, 9),
-(35, 12, 4, 5, 20),
-(40, 8, 5, 5, 21);
-
 INSERT INTO workouts(user_id)
 VALUES
 (1),
 (2), 
 (3),
 (1);
+
+INSERT INTO workout_stats(weight, reps, sets, user_id, exercise_id, workout_id)
+VALUES
+(160, 5, 3, 1, 1, 1),
+(130, 6, 3, 1, 2, 1),
+(80, 12, 4, 1, 3, 1),
+(40, 12, 3, 1, 16, 1),
+(0, 20, 3, 1, 17, 1),
+(30, 10, 3, 2, 4, 2),
+(20, 12, 3, 2, 5, 2),
+(40, 10, 5, 2, 6, 2),
+(20, 12, 3, 2, 18, 2),
+(45, 15, 4, 2, 19, 2),
+(200, 3, 4, 5, 7, 3),
+(130, 12, 3, 5, 8, 3),
+(120, 10, 3, 5, 9, 3),
+(35, 12, 4, 5, 20, 3),
+(40, 8, 5, 5, 21, 3);
+
 
 INSERT INTO workouts_exercises(workout_id, exercise_id)
 VALUES 
