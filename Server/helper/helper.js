@@ -4,4 +4,3 @@ const convertToEmbed = (vidLink) => {
   link += splitShare[3];
   return link;
 }
-
