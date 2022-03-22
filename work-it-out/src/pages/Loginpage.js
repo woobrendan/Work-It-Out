@@ -12,6 +12,7 @@ export default function LoginPage() {
       [e.target.name]: e.target.value,
     }));
   };
+  console.log(user);
 
   return (
     <div>
