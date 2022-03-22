@@ -4,7 +4,7 @@ import {Routes, Route, BrowserRouter as Router} from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import NavBar from './components/NavBar';
 import ExercisePage from './pages/Exercisepage';
-
+import ExerciseDetails from './pages/ExerciseDetails';
 
 function App() {
   return (
@@ -15,8 +15,12 @@ function App() {
           <Route path='/' element={<Homepage />} />
         </Routes>
         <Routes>
-          <Route path='/exercises/:id' element={<ExercisePage />} />
+          <Route path='/workout/:id' element={<ExercisePage />} />
         </Routes>
+        <Routes>
+          <Route path='/exercises/:id' element={<ExerciseDetails />} />
+        </Routes>
+
       </div>
     </Router>
   )
