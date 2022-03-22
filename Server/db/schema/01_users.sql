@@ -25,6 +25,8 @@ CREATE TABLE exercises (
   description TEXT,
   thumbnail TEXT,
   video VARCHAR(255),
+  reps VARCHAR(255),
+  sets VARCHAR(255),
   muscle_group_id INTEGER REFERENCES muscle_groups(id) ON DELETE CASCADE
 );
 

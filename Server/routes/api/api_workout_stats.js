@@ -3,10 +3,10 @@ const router  = express.Router();
 
 module.exports = function(db) {
   
-  // api/workoutStats/:id
+  // api/workoutStats/users/:id
   router.get('/users/:id', (req, res) => {
     const queryString = `
-    SELECT workout_stats.*, exercises.* FROM workout_stats 
+    SELECT workout_stats.weight AS weight, workout_stats.reps AS user_reps, workout_stats.sets AS user_sets, exercises.* FROM workout_stats 
     JOIN users ON user_id = users.id
     JOIN exercises ON exercise_id = exercises.id
     WHERE users.id = $1;`
