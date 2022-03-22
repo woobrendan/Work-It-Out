@@ -32,13 +32,13 @@ export default function StatTable(props) {
       <tr>
         <td>Reps</td>
           {Array.from({length: props.list.length}).map((_, index) => (
-            <td key={index}>{props.list[index].reps}</td>
+            <td key={index}>{props.list[index].user_reps}</td>
           ))}
       </tr>
       <tr>
         <td>Sets</td>
           {Array.from({length: props.list.length}).map((_, index) => (
-            <td key={index}>{props.list[index].sets}</td>
+            <td key={index}>{props.list[index].user_sets}</td>
           ))}
       </tr>
        </tbody>
