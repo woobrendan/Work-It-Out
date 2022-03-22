@@ -1,9 +1,13 @@
 import "./styles.css"
 import {Link} from "react-router-dom"
 
-export default function MuscleGroup({title, image, id}) {
+export default function MuscleGroup({title, image, id, type}) {
+  let url = `/workout/${id}`;
+  if (type == "exercise") {
+    url = `/exercises/${id}`
+  }
   return (
-    <Link to={`/exercises/${id}`}>
+    <Link to={url}>
       <div className="muscle-group">
         <div>
           <img src={image} />
