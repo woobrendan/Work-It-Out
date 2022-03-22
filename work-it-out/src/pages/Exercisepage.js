@@ -1,13 +1,44 @@
-import MuscleGroup from '../components/MuscleGroup';
-
+import {useState} from "react";
+import MuscleGroup from "../components/MuscleGroup";
 
 export default function ExercisePage() {
+  const [workouts, setWorkouts] = useState([
+    {
+      id: 1,
+      name: "Leg exercise",
+      thumbnail:
+        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
+    },
+    {
+      id: 2,
+      name: "Leg exercise2",
+      thumbnail:
+        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
+    },
+    {
+      id: 3,
+      name: "Leg exercise3",
+      thumbnail:
+        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
+    },
+    {
+      id: 4,
+      name: "Leg exercise4",
+      thumbnail:
+        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
+    },
+  ]);
   return (
     <div>
       <h2>Exercises</h2>
-      <MuscleGroup id={1} image={"/logo192.png"} title={"Exercise 1"} />
-      <MuscleGroup id={2} image={"/logo192.png"} title={"Exercise 2"} />
-      <MuscleGroup id={3} image={"/logo192.png"} title={"Exercise 3"} />
-      <MuscleGroup id={4} image={"/logo192.png"} title={"Exercise 4"} />
-    </div>);
+      {workouts.map((workout) => (
+        <MuscleGroup
+          id={workout.id}
+          image={workout.thumbnail}
+          title={workout.name}
+          type="exercise"
+        />
+      ))}
+    </div>
+  );
 }
