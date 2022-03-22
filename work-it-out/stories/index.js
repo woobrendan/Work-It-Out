@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import WorkoutStats from "../src/components/workout_stats"
 import StatListItem from "../src/components/statListItem";
 import StatTable from "../src/components/statTable";
-import StatHistoryTable from "../src/components/MuscleGroup/statHistoryTable";
+import StatHistoryTable from "../src/components/statHistoryTable";
 import {workouts, workoutsLong, userWorkouts} from './testData'
 
 
