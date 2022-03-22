@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const router  = express.Router();
 
@@ -37,15 +38,16 @@ module.exports = function(db) {
   });
 
 
-
+  //api/workout_stats/new   NOTE TO SELF: refactor so its new stat line to existing workout
   router.post('/:id', (req, res) => {
     const stats = req.body;
     const queryString = `
-    INSERT INTO workout_stats(weight, reps, sets, user_id, exercise_id)
-    VALUES ($1, $2, $3, $4, $5);
+      INSERT INTO workout_stats(weight, reps, sets, user_id, exercise_id, workout_id)
+      VALUES ($1, $2, $3, $4, $5, $6);
     `
     return db
-      .query(queryString, [stats.weight, stats.reps, stats.sets, req.params.id, stats.exercise_id])
+    //need to use state to pass through user and workout id
+      .query(queryString, [stats.weight, stats.reps, stats.sets, state.user_id, stats.exercise_id, state.workout_id])
       .then(response => {
         return res.status(200)
         .json(response.rows);
