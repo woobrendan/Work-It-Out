@@ -61,11 +61,32 @@ VALUES
 (35, 12, 4, 5, 20),
 (40, 8, 5, 5, 21);
 
-INSERT INTO workouts(user_id, exercise_id)
+INSERT INTO workouts(user_id)
 VALUES
+(1),
+(2), 
+(3),
+(1);
+
+INSERT INTO workouts_exercises(workout_id, exercise_id)
+VALUES 
 (1, 1),
 (1, 2),
 (1, 3),
+(1, 16),
+(1, 17),
 (2, 4),
 (2, 5),
-(2, 6);
+(2, 6),
+(2, 18),
+(2, 19),
+(4, 7),
+(4, 8),
+(4, 9),
+(4, 20),
+(4, 21),
+(3, 10),
+(3, 11),
+(3, 12),
+(3, 22),
+(3, 23);
