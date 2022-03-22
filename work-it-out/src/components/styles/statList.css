@@ -26,3 +26,7 @@ td {
   margin: 0 auto;
   display: block;
 }
+
+.statList--header h1 {
+  text-align: center;
+}
