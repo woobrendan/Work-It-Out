@@ -10,9 +10,16 @@ export default function NavBar() {
     <nav className="navbar">
       <div>
         <PersonRoundedIcon />
-        <span>
-          <Link to="/login">Login</Link>
-        </span>
+        <div>
+          <span>
+            <Link to="/login">Login</Link>
+          </span>
+        </div>
+        <div>
+          <span>
+            <Link to="/register">Register</Link>
+          </span>
+        </div>
       </div>
 
       <div>
