@@ -1,33 +1,42 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 
 
 export default function ExerciseDetails() {
-  const image = 'https://www.burnthefatinnercircle.com/members/images/1691.jpg';
-  const [exercise, setExercise] = useState(
-    {
-      id: 1,
-      name: "Leg exercise",
-      thumbnail:
-        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
-      video: 'https://www.youtube.com/embed/CjHIKDQ4RQo',
-      description: "The Barbell Bench Press is an upper-body weight training exercise where you push a weight upwards while lying on a weight training bench. The exercise uses the pectoralis major, the anterior deltoids, and the triceps, among other stabilizing muscles."
-    },
-  );
+  const [exercise, setExercise] = useState({});
+  const {id} = useParams();
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/exercises/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setExercise(data)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <div className="exercise-details">
       <div>
-        <img src={exercise.thumbnail} style={{width: "100%", height: "auto"}} />
+        <img
+          src={exercise.thumbnail}
+          style={{width: "100%", height: "auto"}}
+        />
       </div>
       <div>
-        <h1>{exercise.name}</h1>
+        <h1><span>{exercise.name}</span> <a href={`/workout/${id}`}>Back</a></h1>
         <p className="exercise-content">{exercise.description}</p>
         <div>
           <h2>Exercising Video</h2>
-          <iframe width="100%" height="315" src={exercise.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe
+            width="100%"
+            height="315"
+            src={exercise.video}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </div>
-
   );
-
 }
