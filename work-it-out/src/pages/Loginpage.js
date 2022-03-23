@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 const axios = require("axios");
 
 export default function LoginPage() {
@@ -27,23 +32,34 @@ export default function LoginPage() {
 
   return (
     <div>
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        onChange={handleChange}
-        value={user.email}
-      ></input>
-      <input
-        name="password"
-        type="password"
-        placeholder="Password"
-        onChange={handleChange}
-        value={user.password}
-      ></input>
-      <button type="button" onClick={handleSubmit}>
-        Log in
-      </button>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          name="email"
+          type="text"
+          onChange={handleChange}
+          value={user.email}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          name="password"
+          type="password"
+          onChange={handleChange}
+          value={user.password}
+        />
+      </Box>
+      <Button onClick={handleSubmit}> Log in</Button>
     </div>
   );
 }

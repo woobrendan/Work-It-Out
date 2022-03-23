@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 const axios = require("axios");
 
 export default function RegistrationPage() {
@@ -30,39 +34,52 @@ export default function RegistrationPage() {
 
   return (
     <div>
-      <form>
-        <input
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
           name="name"
           type="text"
-          placeholder="Name"
           onChange={handleChange}
           value={user.name}
-        ></input>
-        <input
+        />
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
           name="email"
           type="text"
-          placeholder="Email"
           onChange={handleChange}
           value={user.email}
-        ></input>
-        <input
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
           name="password"
           type="password"
-          placeholder="Password"
           onChange={handleChange}
           value={user.password}
-        ></input>
-        <input
+        />
+        <TextField
+          id="outlined-basic"
+          label="Birthdate"
+          variant="outlined"
           name="birthdate"
           type="text"
-          placeholder="Birthdate"
           onChange={handleChange}
           value={user.birthdate}
-        ></input>
-        <button type="button" onClick={handleSubmit}>
-          Sign up!
-        </button>
-      </form>
+        />
+        <Button onClick={handleSubmit}> Sign up!</Button>
+      </Box>
     </div>
   );
 }
