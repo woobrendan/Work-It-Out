@@ -1,41 +1,27 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import MuscleGroup from "../components/MuscleGroup";
+import {useParams} from "react-router-dom";
 
 export default function ExercisePage() {
-  const [workouts, setWorkouts] = useState([
-    {
-      id: 1,
-      name: "Leg exercise",
-      thumbnail:
-        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
-    },
-    {
-      id: 2,
-      name: "Leg exercise2",
-      thumbnail:
-        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
-    },
-    {
-      id: 3,
-      name: "Leg exercise3",
-      thumbnail:
-        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
-    },
-    {
-      id: 4,
-      name: "Leg exercise4",
-      thumbnail:
-        "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
-    },
-  ]);
+  const {id} = useParams();
+  const [exercises, setExercises] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/musclegroups/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setExercises(data);
+      })
+      .catch(err => console.log(err));
+  }, [])
   return (
     <div>
-      <h2>Exercises</h2>
-      {workouts.map((workout) => (
+      <h2><span>Exercises</span> <a href="/">Back</a></h2>
+      {exercises.map((exercise) => (
         <MuscleGroup
-          id={workout.id}
-          image={workout.thumbnail}
-          title={workout.name}
+          key={exercise.id}
+          id={exercise.id}
+          image={exercise.thumbnail}
+          title={exercise.name}
           type="exercise"
         />
       ))}
