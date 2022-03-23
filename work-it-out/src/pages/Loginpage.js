@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const axios = require("axios");
 
 export default function LoginPage() {
   const [user, setUser] = useState({
@@ -12,7 +13,17 @@ export default function LoginPage() {
       [e.target.name]: e.target.value,
     }));
   };
-  console.log(user);
+
+  const handleSubmit = () => {
+    axios
+      .post("/users/login", { data: user })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -30,7 +41,9 @@ export default function LoginPage() {
         onChange={handleChange}
         value={user.password}
       ></input>
-      <button>Log in</button>
+      <button type="button" onClick={handleSubmit}>
+        Log in
+      </button>
     </div>
   );
 }

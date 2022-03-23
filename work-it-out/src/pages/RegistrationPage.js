@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-// Make an axis post req to that URL
-
-// In the rq body, body will contain obj called user {email, pw, birthday and name}
+const axios = require("axios");
 
 export default function RegistrationPage() {
   const [user, setUser] = useState({
@@ -20,51 +18,51 @@ export default function RegistrationPage() {
   };
 
   const handleSubmit = () => {
-    console.log("USER", user);
-    fetch("localhost:8080/test", {
-      method: "POST",
-    })
-      .then((res) => {
-        console.log(res);
+    axios
+      .post("/users/new", { data: user })
+      .then(function (response) {
+        console.log(response);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(function (error) {
+        console.log(error);
       });
   };
 
   return (
     <div>
-      <input
-        name="name"
-        type="text"
-        placeholder="Name"
-        onChange={handleChange}
-        value={user.name}
-      ></input>
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        onChange={handleChange}
-        value={user.email}
-      ></input>
-      <input
-        name="password"
-        type="password"
-        placeholder="Password"
-        onChange={handleChange}
-        value={user.password}
-      ></input>
-      <input
-        name="birthdate"
-        type="text"
-        placeholder="Birthdate"
-        onChange={handleChange}
-        value={user.birthdate}
-      ></input>
-      <button type="button" onClick={handleSubmit}>
-        Sign up!
-      </button>
+      <form>
+        <input
+          name="name"
+          type="text"
+          placeholder="Name"
+          onChange={handleChange}
+          value={user.name}
+        ></input>
+        <input
+          name="email"
+          type="text"
+          placeholder="Email"
+          onChange={handleChange}
+          value={user.email}
+        ></input>
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+          value={user.password}
+        ></input>
+        <input
+          name="birthdate"
+          type="text"
+          placeholder="Birthdate"
+          onChange={handleChange}
+          value={user.birthdate}
+        ></input>
+        <button type="button" onClick={handleSubmit}>
+          Sign up!
+        </button>
+      </form>
     </div>
   );
 }
