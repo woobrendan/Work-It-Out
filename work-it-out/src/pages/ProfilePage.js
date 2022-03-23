@@ -1,9 +1,10 @@
 import React from "react";
+import useApplicationData from "../helpers/test_state_helper";
+import StatHistoryTable from "../components/statHistoryTable";
 
 export default function ProfilePage() {
+  const { state } = useApplicationData();
   return (
-    <div>
-      <h1>Profile Page</h1>
-    </div>
+    <StatHistoryTable workoutlist={state.statHistory} />
   );
 }
