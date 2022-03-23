@@ -12,7 +12,19 @@ export default function LoginPage() {
       [e.target.name]: e.target.value,
     }));
   };
-  console.log(user);
+
+  const handleSubmit = () => {
+    console.log("USER", user);
+    fetch(" http://localhost:8080/users/login", {
+      method: "POST",
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -30,7 +42,9 @@ export default function LoginPage() {
         onChange={handleChange}
         value={user.password}
       ></input>
-      <button>Log in</button>
+      <button type="button" onClick={handleSubmit}>
+        Log in
+      </button>
     </div>
   );
 }
