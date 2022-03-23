@@ -18,6 +18,7 @@ module.exports = (db, token) => {
           console.log(accessToken);
           // create access token with the user info inside of the token
           res.json({ accessToken });
+          res.redirect("/");
         } else {
           res.send({ error: "error" });
           return;
