@@ -26,7 +26,7 @@ export default function WorkoutStats(props) {
      {exerciseList}
      </div>
      <StatTable list={props.exerciseList}/>
-     <Button className="btn btn-success" onClick={props.onClick}>Add New Stats</Button>
+     <Button className="btn btn-success" onClick={props.onClick}>Add New Workout</Button>
    </div>
   );
 }
