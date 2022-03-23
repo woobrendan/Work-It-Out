@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const axios = require("axios");
 
 export default function LoginPage() {
   const [user, setUser] = useState({
@@ -14,15 +15,13 @@ export default function LoginPage() {
   };
 
   const handleSubmit = () => {
-    console.log("USER", user);
-    fetch(" http://localhost:8080/users/login", {
-      method: "POST",
-    })
-      .then((res) => {
-        console.log(res);
+    axios
+      .post("/users/login", { data: user })
+      .then(function (response) {
+        console.log(response);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(function (error) {
+        console.log(error);
       });
   };
 

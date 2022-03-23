@@ -27,9 +27,7 @@ module.exports = (db, token) => {
 
   // /users/new,   creating new users
   router.post("/new", (req, res) => {
-    const user = req.body;
-    // console.log("REQ", req);
-    console.log("USER", user);
+    const user = req.body.data;
     const queryString = `INSERT INTO users(name, email, password, birthdate) VALUES($1, $2, $3, $4) RETURNING *;`;
     const values = [user.name, user.email, user.password, user.birthdate];
     return db
@@ -43,13 +41,14 @@ module.exports = (db, token) => {
         // set token in local storage to new user
         // TBD
         //create JWT token, serialize user obj
-        // const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
+        const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
         // create access token with the user info inside of the token
         res.json({ accessToken });
-        // res.redirect("/");
+        res.redirect("/");
       })
       .catch((error) => {
         console.log(error);
+        console.log("POST /users/new", error);
       });
   });
 

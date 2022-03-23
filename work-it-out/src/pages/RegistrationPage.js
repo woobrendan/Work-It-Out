@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
 const axios = require("axios");
-// Make an axis post req to that URL
-
-// In the rq body, body will contain obj called user {email, pw, birthday and name}
 
 export default function RegistrationPage() {
   const [user, setUser] = useState({
@@ -21,35 +18,14 @@ export default function RegistrationPage() {
   };
 
   const handleSubmit = () => {
-    const headers = {
-      // "Content-Type": "application/json",
-      // 'Access-Control-Allow-Origin"': "*",
-    };
-    console.log("USER", user);
     axios
-      .post("/users/new", { user })
+      .post("/users/new", { data: user })
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
-    // console.log("USER", user);
-    // fetch(" /users/new", {
-    //   method: "POST",
-    //   mode: "cors",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     // 'Access-Control-Allow-Origin"': '*',
-    //   },
-    //   body: JSON.stringify(user),
-    // })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   return (
