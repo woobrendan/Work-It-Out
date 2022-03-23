@@ -1,10 +1,14 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #cfcfcf;
+  background-image: linear-gradient(#ffea00, transparent);
   padding: 1rem;
 }
 
 .navbar > div {
   /* flex: 1; */
+}
+
+.brand {
+  font-size: 2rem;
 }

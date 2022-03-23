@@ -10,7 +10,7 @@ import { groupWorkouts } from '../helpers/helperFunc'
 // Importing material UI icons
 // import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 
-// needs props.workoutlist which contains array of exercises. grab from api/workouts/users/:id
+// // needs props.workoutlist which contains array of exercises. grab from api/workouts/users/:id
 export default function StatHistoryTable(props) {
   const groupedWorkouts = groupWorkouts(props.workoutlist);
  

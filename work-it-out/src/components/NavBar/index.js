@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
@@ -8,6 +8,11 @@ import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 export default function NavBar() {
   return (
     <nav className="navbar">
+      <div>
+        <Link to="/">
+          <h1 className="brand"> Work It Out </h1>
+        </Link>
+      </div>
       <div>
         <Link to="/profile">
           <PersonRoundedIcon />
@@ -23,13 +28,6 @@ export default function NavBar() {
           </span>
         </div>
       </div>
-
-      <div>
-        <Link to="/">
-          <span> Work It Out </span>
-        </Link>
-      </div>
-      <div></div>
     </nav>
   );
 }
