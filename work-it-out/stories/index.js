@@ -7,6 +7,7 @@ import StatListItem from "../src/components/statListItem";
 import StatTable from "../src/components/statTable";
 import StatHistoryTable from "../src/components/statHistoryTable";
 import {workouts, workoutsLong, userWorkouts} from './testData'
+import EmptyWorkouts from '../src/components/emptyWorkouts';
 
 
 storiesOf("WorkoutStats", module)
@@ -20,5 +21,8 @@ storiesOf("StatListItem", module)
 storiesOf("StatTable", module)
   .add("Basic Table", () => <StatTable exercise={workouts[1]} list={workouts}/>)
 
-  storiesOf("Stat History Table", module)
+storiesOf("Stat History Table", module)
   .add("Basic Table", () => <StatHistoryTable workoutlist={userWorkouts}/>)
+
+storiesOf("Empty Workouts", module)
+  .add("Empty, add workout", () => <EmptyWorkouts/>)
