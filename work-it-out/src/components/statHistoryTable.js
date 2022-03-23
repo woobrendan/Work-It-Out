@@ -52,7 +52,6 @@ export default function StatHistoryTable(props) {
 
   return (
     <>
-      <h1 className="statList--header">{props?.workoutlist?.[0]?.user_name || "Unamed"} </h1>
       {tableWorkouts}
     </>
   );
