@@ -8,12 +8,14 @@ const router = express.Router();
 const app = express();
 const morgan = require("morgan");
 const jwt = require('jsonwebtoken');
+const cors = require("cors");
 const authenticateToken = require('./helper/authToken')
 // serve static files (img, css, js) from directoty 'public'
 app.use(express.static("public"));
 app.use(morgan("dev"));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 // app.use(authenticateToken)
+app.use(cors());
 
 //database import
 const pool = require("./lib/db.js");

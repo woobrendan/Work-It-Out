@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
 module.exports = function(db) {
   // route = /api/exercises
@@ -10,7 +10,7 @@ module.exports = function(db) {
       .query(queryString)
       .then(response => {
         return res.status(200)
-        .json(response.rows);
+          .json(response.rows);
       })
       .catch(err => console.log(err.message));
   });
