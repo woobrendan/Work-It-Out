@@ -7,6 +7,7 @@ import LoginPage from "./pages/Loginpage";
 import ExerciseDetails from "./pages/ExerciseDetails";
 import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
+import WorkoutsNew from "./components/workouts_new";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/exercises/:id" element={<ExerciseDetails />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/workouts/new" element={<WorkoutsNew />} />
         </Routes>
       </div>
     </Router>
