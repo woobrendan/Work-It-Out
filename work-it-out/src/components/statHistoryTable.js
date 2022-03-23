@@ -1,13 +1,14 @@
 import React from "react";
 // import "./NavBar.css";
-import {Link } from 'react-router-dom'
+// import {Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
+import "../components/styles/statList.css";
 import Table from 'react-bootstrap/Table';
 import { groupWorkouts } from '../helpers/helperFunc' 
 
 
 // Importing material UI icons
-import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+// import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 
 // needs props.workoutlist which contains array of exercises. grab from api/workouts/users/:id
 export default function StatHistoryTable(props) {
