@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import MuscleGroup from "../components/MuscleGroup";
 
 export default function Homepage() {
@@ -28,6 +28,14 @@ export default function Homepage() {
         "https://www.burnthefatinnercircle.com/members/images/1691.jpg",
     },
   ]);
+  useEffect(() => {
+    fetch("http://localhost:8080/api/workouts")
+      .then((res) => res.json())
+      .then((data) => {
+        setWorkouts(data);
+      })
+      .catch((err) => console.log(err))
+  }, [])
   return (
     <div>
       <h2>Muscles Groups</h2>

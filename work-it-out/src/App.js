@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NavBar from "./components/NavBar";
 import ExercisePage from "./pages/Exercisepage";
@@ -18,20 +18,19 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
         </Routes>
-        <Routes></Routes>
-        <Routes></Routes>
+
+
+
+
+
 
         <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path='/workout/:id' element={<ExercisePage />} />
+          <Route path='/exercises/:id' element={<ExerciseDetails />} />
 
-          
-        
-        <Routes>
-         <Route path="/" element={<Homepage />} />
-         <Route path='/workout/:id' element={<ExercisePage />} />
-         <Route path='/exercises/:id' element={<ExerciseDetails />} />
-        
-         <Route path="/profile" element={<ProfilePage />} />
-         <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
         </Routes>
 
       </div>
