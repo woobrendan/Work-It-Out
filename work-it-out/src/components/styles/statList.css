@@ -27,6 +27,6 @@ td {
   display: block;
 }
 
-.statList--header h1 {
+.statList--header {
   text-align: center;
 }
