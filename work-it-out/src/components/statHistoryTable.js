@@ -12,12 +12,12 @@ import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 // needs props.workoutlist which contains array of exercises. grab from api/workouts/users/:id
 export default function StatHistoryTable(props) {
   const groupedWorkouts = groupWorkouts(props.workoutlist);
-  console.log(groupedWorkouts)
+ 
   const tableWorkouts = groupedWorkouts.map((workout, index) => (
-    <Table responsive striped bordered size="md">
+    <Table responsive striped bordered size="md" key={index}>
       <thead className="thead-dark">
         <tr>
-          <th colspan={workout.length + 1}>Workout #{index + 1}</th>
+          <th colSpan={workout.length + 1}>Workout #{index + 1}</th>
         </tr>
         <tr>
         <th></th>
@@ -50,11 +50,9 @@ export default function StatHistoryTable(props) {
   ))
 
   return (
-    <div>
-      <div className="statList--header">
-        <h1>{props.workoutlist[0].user_name} </h1>
-      </div>
+    <>
+      <h1 className="statList--header">{props?.workoutlist?.[0]?.user_name || "Unamed"} </h1>
       {tableWorkouts}
-    </div>
+    </>
   );
 }
