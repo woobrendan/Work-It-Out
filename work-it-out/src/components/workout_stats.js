@@ -18,11 +18,15 @@ export default function WorkoutStats(props) {
   );
   return (
    <div className="statList">
+     <div className="statList--header">
+      <h1>{props.exerciseList[0].user_name} </h1>
+      <h1>Workout: {props.exerciseList[0].workout_num}</h1>
+    </div>
      <div className="statExerciseList">
      {exerciseList}
      </div>
      <StatTable list={props.exerciseList}/>
-     <Button className="btn btn-success" onClick={props.onClick}>Add New Stats</Button>
+     <Button className="btn btn-success" onClick={props.onClick}>Add New Workout</Button>
    </div>
   );
 }
