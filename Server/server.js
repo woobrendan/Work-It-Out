@@ -9,7 +9,8 @@ const app = express();
 const morgan = require("morgan");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const authenticateToken = require("./helper/authToken");
+// const authenticateToken = require("./helper/authToken");
+const bodyParser = require("body-parser");
 app.use(cors());
 // serve static files (img, css, js) from directoty 'public'
 app.use(express.static("public"));
@@ -21,7 +22,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(authenticateToken)
+// app.use(authenticateToken);
 
 app.use((req, res, next) => {
   const allowedOrigins = ["http://localhost:3002/", "http://localhost:8080/"];

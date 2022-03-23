@@ -5,8 +5,8 @@ require("dotenv").config();
 module.exports = (db, token) => {
   // users/login
   router.post("/login", (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const email = req.body.data.email;
+    const password = req.body.data.password;
 
     db.query(`SELECT * FROM users WHERE email = $1;`, [email]).then(
       (result) => {
@@ -15,6 +15,7 @@ module.exports = (db, token) => {
 
           //create JWT token, serialize user obj
           const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
+          console.log(accessToken);
           // create access token with the user info inside of the token
           res.json({ accessToken });
         } else {
@@ -42,6 +43,7 @@ module.exports = (db, token) => {
         // TBD
         //create JWT token, serialize user obj
         const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
+
         // create access token with the user info inside of the token
         res.json({ accessToken });
         res.redirect("/");
