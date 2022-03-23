@@ -9,6 +9,8 @@ const app = express();
 const morgan = require("morgan");
 const jwt = require('jsonwebtoken');
 const authenticateToken = require('./helper/authToken')
+const cors = require('cors');
+app.use(cors());
 // serve static files (img, css, js) from directoty 'public'
 app.use(express.static("public"));
 app.use(morgan("dev"));

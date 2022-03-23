@@ -1,0 +1,4 @@
+ user_name | workout_num | weight | user_reps | user_sets | id | name | description | thumbnail | video | reps | sets | muscle_group_id 
+-----------+-------------+--------+-----------+-----------+----+------+-------------+-----------+-------+------+------+-----------------
+(0 rows)
+

@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS workouts_exercises CASCADE;
-DROP TABLE IF EXISTS workouts CASCADE;
 DROP TABLE IF EXISTS workout_stats CASCADE;
+DROP TABLE IF EXISTS workouts CASCADE;
 DROP TABLE IF EXISTS exercises CASCADE;
 DROP TABLE IF EXISTS muscle_groups CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
@@ -25,7 +25,13 @@ CREATE TABLE exercises (
   description TEXT,
   thumbnail TEXT,
   video VARCHAR(255),
+  reps VARCHAR(255),
+  sets VARCHAR(255),
   muscle_group_id INTEGER REFERENCES muscle_groups(id) ON DELETE CASCADE
+);
+CREATE TABLE workouts (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE workout_stats ( 
@@ -34,13 +40,10 @@ CREATE TABLE workout_stats (
   reps INTEGER,
   sets INTEGER,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  exercise_id INTEGER REFERENCES exercises(id) ON DELETE CASCADE
+  exercise_id INTEGER REFERENCES exercises(id) ON DELETE CASCADE,
+  workout_id INTEGER REFERENCES workouts(id) ON DELETE CASCADE
 );
 
-CREATE TABLE workouts (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-);
 
 CREATE TABLE workouts_exercises(
   id SERIAL PRIMARY KEY NOT NULL,
