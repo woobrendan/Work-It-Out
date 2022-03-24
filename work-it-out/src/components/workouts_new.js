@@ -1,10 +1,7 @@
-import React, {useState, useEffect} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Card, Form, FormGroup} from 'react-bootstrap';
+import React, {useState} from "react";
 import './styles/card.css'
 import axios from "axios";
 import ExerciseForm from './ExerciseForm'
-import MenuItem from '@mui/material/MenuItem';
 import StatTable from "./statTable";
 import Button from '@mui/material/Button';
 
