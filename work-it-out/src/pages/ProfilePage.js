@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useApplicationData from "../helpers/test_state_helper";
 import StatHistoryTable from "../components/statHistoryTable";
 import EmptyWorkouts from "../components/emptyWorkouts";
@@ -12,13 +12,16 @@ const EMPTY = "EMPTY";
 
 export default function ProfilePage() {
   const { state } = useApplicationData();
-  const [mode, setMode] = useState(
-    WORKOUTS
-    // state.statHistory.length === 0 ? EMPTY : WORKOUTS
-  );
-  // console.log('I am mode:', mode);
-  // console.log('stat history:', state.statHistory)
-  // const mode = state.statHistory.length === 0 ? EMPTY : WORKOUTS;
+  const [mode, setMode] = useState(EMPTY);
+  
+  
+  useEffect(() => {
+
+    if (state.statHistory.length !== 0 && mode !== WORKOUTS) {
+      setMode(WORKOUTS)
+    }
+  },[state])
+
   return (
     <>
       <h1 className="statList--header">
