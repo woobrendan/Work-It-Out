@@ -31,7 +31,8 @@ export default function ExerciseForm(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [exerciseStat, setExerciseStat] = useState({
-    name: "",
+    name: '',
+    exercise_id: "",
     weight: "",
     user_reps: "",
     user_sets: ""
@@ -47,15 +48,33 @@ export default function ExerciseForm(props) {
   );
 
   const handleChange = (event) => {
+
     setExerciseStat((prev) =>({
       ...prev,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     }))
   };
 
+  //return the exercise id of a given exercise
+  const findExerciseId = (name) => {
+    const foundExercise = exercises.find(exercise => name === exercise.name)
+    return foundExercise.id
+  }
+
+  const handleExerciseChange = (event) => {
+    setExerciseStat((prev) =>({
+      ...prev,
+      name: event.target.value,
+      exercise_id: findExerciseId(event.target.value),
+    }))
+  };
+
+  //render options for user to choose exercises for workouts
   const mappedExercises = exercises.map((move) => (
     <MenuItem key={move.id} value={move.name}>{move.name}</MenuItem>
   ));
+
+  
 
   return ( 
     <div className="modalForm">
@@ -84,7 +103,7 @@ export default function ExerciseForm(props) {
                 className="form-control" 
                 name="name"
                 value={exerciseStat.exercise} 
-                onChange={handleChange}
+                onChange={handleExerciseChange}
               >
                 {mappedExercises}
               </Select>
