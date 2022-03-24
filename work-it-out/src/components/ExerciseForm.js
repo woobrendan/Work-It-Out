@@ -9,6 +9,10 @@ import axios from 'axios'
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import './styles/card.css'
 
 
@@ -28,8 +32,7 @@ const style = {
 export default function ExerciseForm(props) {
   const [exercises, setExercises] = useState([]);
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [isError, setIsError] = useState(false);
   const [exerciseStat, setExerciseStat] = useState({
     name: '',
     exercise_id: "",
@@ -37,18 +40,21 @@ export default function ExerciseForm(props) {
     user_reps: "",
     user_sets: ""
   });
-
+  
   useEffect(() => {
     axios.get(`http://localhost:8080/api/exercises`)
     .then((res) => {
       setExercises(res.data)
     })
     .catch(err => console.log("Error:", err))
-    },[]
+  },[]
   );
-
+  //handle modal status
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
+  //handles changes to weight, reps, sets, adjusts state
   const handleChange = (event) => {
-
     setExerciseStat((prev) =>({
       ...prev,
       [event.target.name]: event.target.value,
@@ -61,6 +67,7 @@ export default function ExerciseForm(props) {
     return foundExercise.id
   }
 
+  //handle selection of exercise, sets name of exercise and the id value
   const handleExerciseChange = (event) => {
     setExerciseStat((prev) =>({
       ...prev,
@@ -74,18 +81,59 @@ export default function ExerciseForm(props) {
     <MenuItem key={move.id} value={move.name}>{move.name}</MenuItem>
   ));
 
+
+  //When user clicks add exercise to workout. verify fields are filled, or show error
+  const addExerciseClick = () => {
+    const statValues = Object.values(exerciseStat)
+    if (statValues.includes('')) {
+      setIsError(true);
+    } else {
+      //fields are filled. set error to false, send info to parent, reset field/state
+      setIsError((prev) => {
+        if (prev) return false
+      })
+      props.onClick(exerciseStat);
+      setExerciseStat({
+          name: '',
+        exercise_id: "",
+        weight: "",
+        user_reps: "",
+        user_sets: ""
+      })
+      handleClose();
+    }
+  }
+
   
 
   return ( 
     <div className="modalForm">
       <pre>{JSON.stringify(exerciseStat, null, 2)}</pre>
-      <Button 
-        onClick={handleOpen}
-        variant="contained" 
-        color="success"
-      >
-        Add New Exercise
-      </Button>
+      <Card sx={{minwidth: 275}}>
+        <CardContent className="cardContent">
+          <CardMedia
+            component="img"
+            height="194"
+            image="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="Get Started!"
+          />
+          <br></br>
+          <Typography variant="h5" component="div">
+           Start Adding Exercises to your Workout!
+          </Typography>
+          <br></br>
+          <CardActions className="centerButton">
+          <Button 
+            onClick={handleOpen}
+            variant="contained"
+            color="warning"
+          >
+            Add New Exercise
+          </Button>
+          </CardActions>
+        </CardContent>
+      </Card> 
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -96,9 +144,9 @@ export default function ExerciseForm(props) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Exercise
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Box id="modal-modal-description" sx={{ mt: 2 }}>
             <FormControl fullWidth>
-              <InputLabel for="exampleFormControlSelect2">Exercise</InputLabel>
+              <InputLabel htmlFor="exampleFormControlSelect2">Exercise</InputLabel>
               <Select 
                 className="form-control" 
                 name="name"
@@ -114,6 +162,8 @@ export default function ExerciseForm(props) {
                 label="Weight"
                 name="weight"
                 type="number"
+                error={exerciseStat.weight === ""}
+                helperText={exerciseStat.weight === "" ? 'Add Weight!' : ' '}
                 value={exerciseStat.weight}
                 onChange={handleChange}
                 InputLabelProps={{
@@ -125,7 +175,9 @@ export default function ExerciseForm(props) {
                 label="Reps"
                 name="user_reps"
                 type="number"
-                value={exerciseStat.reps}
+                error={exerciseStat.user_reps === ""}
+                helperText={exerciseStat.user_reps === "" ? 'Add Reps!' : ' '}
+                value={exerciseStat.user_reps}
                 onChange={handleChange}
                 InputLabelProps={{
                   shrink: true,
@@ -136,7 +188,9 @@ export default function ExerciseForm(props) {
                 label="Sets"
                 name="user_sets"
                 type="number"
-                value={exerciseStat.sets}
+                error={exerciseStat.user_sets === ""}
+                helperText={exerciseStat.user_sets === "" ? 'Add Sets!' : ' '}
+                value={exerciseStat.user_sets}
                 onChange={handleChange}
                 InputLabelProps={{
                   shrink: true,
@@ -146,15 +200,20 @@ export default function ExerciseForm(props) {
           </FormControl>
           <div className="centerButton">
           <br></br>
+          {isError && (
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            All fields must be filled.
+          </Typography>
+          )}
             <Button 
               variant="contained" 
               color="success"
-              onClick={() => props.onClick(exerciseStat)}
+              onClick={() => addExerciseClick()}
             >
             Add Exercise
             </Button>
             </div>
-          </Typography>
+          </Box>
         </Box>
       </Modal>
     
