@@ -1,4 +1,14 @@
-.EmptyWorkouts {
+.EmptyWorkouts,
+.modalForm {
+  margin: auto;
+  width: 50%;
+}
+
+.form-outline {
+  display: flex;
+}
+
+.centerButton {
   margin: auto;
   width: 50%;
 }
