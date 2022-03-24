@@ -10,7 +10,6 @@ import Button from '@mui/material/Button';
 export default function WorkoutsNew() {
 
   const [workout, setWorkout] = useState([]);
-  const [mode, setMode] = useState([]);
 
   const handleFinalSubmit = () => {
     console.log("I submit")
