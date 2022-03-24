@@ -1,28 +1,30 @@
-import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export default function ExerciseDetails() {
   const [exercise, setExercise] = useState({});
-  const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     fetch(`http://localhost:8080/api/exercises/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setExercise(data)
+        setExercise(data);
       })
-      .catch(err => console.log(err))
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="exercise-details">
       <div>
         <img
           src={exercise.thumbnail}
-          style={{width: "100%", height: "auto"}}
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
       <div>
-        <h1><span>{exercise.name}</span> <a href={`/workout/${id}`}>Back</a></h1>
+        <h1>
+          <span>{exercise.name}</span> <a href={`/workout/${id}`}>Back</a>
+        </h1>
         <p className="exercise-content">{exercise.description}</p>
         <div>
           <h2>Exercising Video</h2>

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-// Make an axis post req to that URL
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-// In the rq body, body will contain obj called user {email, pw, birthday and name}
+const axios = require("axios");
 
 export default function RegistrationPage() {
   const [user, setUser] = useState({
@@ -20,51 +22,64 @@ export default function RegistrationPage() {
   };
 
   const handleSubmit = () => {
-    console.log("USER", user);
-    fetch("localhost:8080/test", {
-      method: "POST",
-    })
-      .then((res) => {
-        console.log(res);
+    axios
+      .post("/users/new", { data: user })
+      .then(function (response) {
+        console.log(response);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(function (error) {
+        console.log(error);
       });
   };
 
   return (
     <div>
-      <input
-        name="name"
-        type="text"
-        placeholder="Name"
-        onChange={handleChange}
-        value={user.name}
-      ></input>
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        onChange={handleChange}
-        value={user.email}
-      ></input>
-      <input
-        name="password"
-        type="password"
-        placeholder="Password"
-        onChange={handleChange}
-        value={user.password}
-      ></input>
-      <input
-        name="birthdate"
-        type="text"
-        placeholder="Birthdate"
-        onChange={handleChange}
-        value={user.birthdate}
-      ></input>
-      <button type="button" onClick={handleSubmit}>
-        Sign up!
-      </button>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          name="name"
+          type="text"
+          onChange={handleChange}
+          value={user.name}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          name="email"
+          type="text"
+          onChange={handleChange}
+          value={user.email}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          name="password"
+          type="password"
+          onChange={handleChange}
+          value={user.password}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Birthdate"
+          variant="outlined"
+          name="birthdate"
+          type="text"
+          onChange={handleChange}
+          value={user.birthdate}
+        />
+        <Button onClick={handleSubmit}> Sign up!</Button>
+      </Box>
     </div>
   );
 }
