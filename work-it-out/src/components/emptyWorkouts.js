@@ -30,6 +30,7 @@ export default function EmptyWorkouts() {
           </Typography>
           <CardActions className="centerButton">
             <Button 
+            className="workoutAddButton"
             component={Link} 
             to={'/workouts/new'} 
             variant="contained"
