@@ -5,9 +5,7 @@ module.exports = function(db) {
   // route = /api/workouts
   router.get('/', (req, res) => {
     const queryString = `
-    SELECT * FROM workouts 
-    JOIN workouts_exercises ON workout_id = workouts.id
-    JOIN exercises ON workouts_exercises.exercise_id = exercises.id;`
+    SELECT * FROM workouts ;`
     return db
       .query(queryString)
       .then(response => {
