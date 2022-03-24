@@ -58,26 +58,3 @@ const exerciseValues = (arrOfExercises, workoutId) => {
   })
   return valsArray;
 }
-const workout =
-{ 
- "workouts": [
-    {
-      "name": "Barbell Deadlift",
-      "user_id": 1,
-      "exercise_id": "10",
-      "weight": "120",
-      "user_reps": "8",
-      "user_sets": "3",
-      "workout_id": 1
-    },
-    {
-      "name": "Lateral Raise",
-      "user_id": 1,
-      "exercise_id": "5",
-      "weight": "20",
-      "user_reps": "12",
-      "user_sets": "4",
-      "workout_id": 1
-    }
-  ]
-}
