@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link } from 'react-router-dom'
 import './styles/card.css'
 import axios from "axios";
 import ExerciseForm from './ExerciseForm'
@@ -12,12 +13,12 @@ export default function WorkoutsNew() {
 
   const handleFinalSubmit = () => {
     console.log("I submit")
-    // axios
-    //   .post('/api/workouts/new', {data: workout})
-    //   .then(res => {
-    //     console.log("res:", res)
-    //   })
-    //   .catch(err => console.log(err))
+    axios
+      .post('http://localhost:8080/workouts/new', {workouts: workout})
+      .then(res => {
+        console.log("res:", res)
+      })
+      .catch(err => console.log(err))
   };
 
   const handleExerciseForm = (values) => {
@@ -35,6 +36,7 @@ export default function WorkoutsNew() {
       </pre>
       <StatTable list={workout}/>
       <div className="centerButton">
+        <Link to="/profile">
         <Button 
           onClick={handleFinalSubmit}
           variant="contained" 
@@ -42,6 +44,7 @@ export default function WorkoutsNew() {
         >
           Submit Workout
         </Button>
+        </Link>
       </div>
     </>
   );
