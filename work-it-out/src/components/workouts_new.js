@@ -5,19 +5,24 @@ import './styles/card.css'
 import axios from "axios";
 import ExerciseForm from './ExerciseForm';
 import MenuItem from '@mui/material/MenuItem';
+import StatTable from "./statTable";
+import Button from '@mui/material/Button';
+
 
 
 export default function WorkoutsNew() {
 
   const [workout, setWorkout] = useState([]);
+  const [mode, setMode] = useState([]);
 
   const handleFinalSubmit = () => {
-    axios
-      .post('/api/workouts/new', {data: workout})
-      .then(res => {
-        console.log("res:", res)
-      })
-      .catch(err => console.log(err))
+    console.log("I submit")
+    // axios
+    //   .post('/api/workouts/new', {data: workout})
+    //   .then(res => {
+    //     console.log("res:", res)
+    //   })
+    //   .catch(err => console.log(err))
   };
 
   const handleExerciseForm = (values) => {
@@ -29,10 +34,21 @@ export default function WorkoutsNew() {
 
   return (
     <>
+    <h1>Create New Workout</h1>
       <ExerciseForm onClick={handleExerciseForm} />
       <pre>
         {JSON.stringify(workout, null, 2)}
       </pre>
+      <StatTable list={workout}/>
+      <div className="centerButton">
+        <Button 
+          onClick={handleFinalSubmit}
+          variant="contained" 
+          color="success"
+        >
+          Submit Workout
+        </Button>
+      </div>
     </>
   );
 }
