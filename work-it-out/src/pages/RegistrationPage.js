@@ -81,7 +81,7 @@ export default function RegistrationPage() {
           onChange={handleChange}
           value={user.birthdate}
         />
-        <Button onClick={handleSubmit}> Sign up!</Button>
+        <Button onClick={handleSubmit}>Sign up!</Button>
       </Box>
     </div>
   );

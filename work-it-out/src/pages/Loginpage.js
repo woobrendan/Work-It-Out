@@ -11,6 +11,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -63,7 +64,7 @@ export default function LoginPage() {
           value={user.password}
         />
       </Box>
-      <Button onClick={handleSubmit}> Log in</Button>
+      <Button onClick={handleSubmit}>Log in</Button>
     </div>
   );
 }
