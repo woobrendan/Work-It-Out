@@ -35,6 +35,7 @@ export default function ExerciseForm(props) {
   const [isError, setIsError] = useState(false);
   const [exerciseStat, setExerciseStat] = useState({
     name: '',
+    user_id: 1,
     exercise_id: "",
     weight: "",
     user_reps: "",
