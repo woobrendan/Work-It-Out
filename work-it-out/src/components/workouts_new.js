@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 export default function WorkoutsNew() {
 
   const [workout, setWorkout] = useState([]);
-  const [mode, setMode] = useState([]);
+  const [isError, setIsError] = useState(false);
 
   const handleFinalSubmit = () => {
     console.log("I submit")
@@ -23,16 +23,16 @@ export default function WorkoutsNew() {
   };
 
   const handleExerciseForm = (values) => {
-    const workoutCopy = [...workout]
-    workoutCopy.push(values)
-    setWorkout(workoutCopy) 
+      const workoutCopy = [...workout]
+      workoutCopy.push(values)
+      setWorkout(workoutCopy) 
   }
 
 
   return (
     <>
     <h1>Create New Workout</h1>
-      <ExerciseForm onClick={handleExerciseForm} />
+      <ExerciseForm onClick={handleExerciseForm} isError={isError}/>
       <pre>
         {JSON.stringify(workout, null, 2)}
       </pre>
