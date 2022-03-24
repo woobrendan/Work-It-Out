@@ -95,7 +95,8 @@ export default function ExerciseForm(props) {
       })
       props.onClick(exerciseStat);
       setExerciseStat({
-          name: '',
+        name: '',
+        user_id: 1,
         exercise_id: "",
         weight: "",
         user_reps: "",
