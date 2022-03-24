@@ -10,7 +10,8 @@ const EMPTY = "EMPTY";
 export default function ProfilePage() {
   const { state } = useApplicationData();
   const [mode, setMode] = useState(
-    state.statHistory.length === 0 ? EMPTY : WORKOUTS
+    EMPTY
+    // state.statHistory.length === 0 ? EMPTY : WORKOUTS
   );
   // const mode = state.statHistory.length === 0 ? EMPTY : WORKOUTS;
   return (

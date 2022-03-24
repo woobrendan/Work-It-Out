@@ -12,3 +12,19 @@
   margin: auto;
   width: 50%;
 }
+
+a:hover {
+  color: yellow;
+}
+
+.cardContent {
+  background-image: linear-gradient(red, yellow);
+}
+
+.EmptyWorkouts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
