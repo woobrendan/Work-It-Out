@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Button, Card} from 'react-bootstrap';
 import './styles/card.css'
+import {Link } from 'react-router-dom'
 
 
 export default function EmptyWorkouts() {
@@ -15,7 +16,9 @@ export default function EmptyWorkouts() {
           <Card.Text>
             To Start Adding New Workouts Click the Button Below!
           </Card.Text>
-          <Button className="btn btn-danger">Add New Workout</Button>
+          <Link to="/workouts/new">
+            <Button className="btn btn-danger">Add New Workout</Button>
+          </Link>
         </Card.Body>
       </Card> 
     </div>
