@@ -14,9 +14,7 @@ export default function ProfilePage() {
   const { state } = useApplicationData();
   const [mode, setMode] = useState(EMPTY);
   
-  
   useEffect(() => {
-
     if (state.statHistory.length !== 0 && mode !== WORKOUTS) {
       setMode(WORKOUTS)
     }
@@ -28,7 +26,6 @@ export default function ProfilePage() {
         {state.statHistory[0]?.user_name || "Get My Username Later"}{" "}
       </h1>
       {mode === WORKOUTS && (
-
         <>
          <div className="centerButton">
           <Button
