@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -7,6 +7,8 @@ import TextField from "@mui/material/TextField";
 const axios = require("axios");
 
 export default function RegistrationPage() {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -25,6 +27,7 @@ export default function RegistrationPage() {
     axios
       .post("/users/new", { data: user })
       .then(function (response) {
+        navigate("/");
         console.log(response);
       })
       .catch(function (error) {

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -7,6 +8,8 @@ import TextField from "@mui/material/TextField";
 const axios = require("axios");
 
 export default function LoginPage() {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -23,6 +26,7 @@ export default function LoginPage() {
     axios
       .post("/users/login", { data: user })
       .then(function (response) {
+        navigate("/");
         console.log(response);
       })
       .catch(function (error) {
