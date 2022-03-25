@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import MuscleGroup from "../components/MuscleGroup";
 import {useParams} from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function ExercisePage() {
   const {id} = useParams();
@@ -15,7 +16,7 @@ export default function ExercisePage() {
   }, [])
   return (
     <div>
-      <h2><span>Exercises</span> <a href="/">Back</a></h2>
+      <h2><span>Exercises</span> <a href="/"><ArrowBackIcon sx={{fontSize: 60}} /></a></h2>
       {exercises.map((exercise) => (
         <MuscleGroup
           key={exercise.id}
