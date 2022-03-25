@@ -32,11 +32,12 @@
 .menu {
   text-align: right;
   cursor: pointer;
+  position: relative;
 }
 
 .menu-options {
   position: absolute;
-  right: 1rem;
+  right: 0;
   background-color: #fff;
   padding: 1rem;
   box-shadow: -2px 2px 4px 4px #eee;

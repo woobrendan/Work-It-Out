@@ -21,29 +21,32 @@ export default function NavBar() {
 
 
   return (
-    <nav className="navbar">
-      <div>
-        <Link to="/" style={linkStyle}>
-          <h1 className="brand">Work <span className="dumbbell" >  I</span>t Out </h1>
-        </Link>
-        <div>Signed in As {user.name}</div>
-      </div>
-      <div className="menu">
-        <div onClick={() => setShowAuth(!showAuth)} style={linkStyle}>
-          <PersonRoundedIcon sx={{fontSize: 50}} />
+
+    <nav className="navbar ">
+      <div className="container">
+        <div>
+          <Link to="/" style={linkStyle}>
+            <h1 className="brand">Work <span className="dumbbell" >  I</span>t Out </h1>
+          </Link>
+          <div>Signed in As {user.name}</div>
         </div>
-        {showAuth && <div className="menu-options">
-          <div>
-            <span>
-              <Link to="/login" style={linkStyle}>Login</Link>
-            </span>
+        <div className="menu">
+          <div onClick={() => setShowAuth(!showAuth)} style={linkStyle}>
+            <PersonRoundedIcon sx={{fontSize: 50}} />
           </div>
-          <div>
-            <span>
-              <Link to="/register" style={linkStyle}>Register</Link>
-            </span>
-          </div>
-        </div>}
+          {showAuth && <div className="menu-options">
+            <div>
+              <span>
+                <Link to="/login" style={linkStyle}>Login</Link>
+              </span>
+            </div>
+            <div>
+              <span>
+                <Link to="/register" style={linkStyle}>Register</Link>
+              </span>
+            </div>
+          </div>}
+        </div>
       </div>
     </nav >
   );
