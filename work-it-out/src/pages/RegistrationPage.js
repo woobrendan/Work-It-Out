@@ -1,6 +1,6 @@
-import React, {useState, useContext} from "react";
-import {useNavigate} from "react-router-dom";
-import {UserContext} from "../components/UserContext";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../helpers/UserContext";
 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -28,13 +28,13 @@ export default function RegistrationPage() {
 
   const handleSubmit = () => {
     axios
-      .post("/users/new", {data: user})
-      .then(function(response) {
+      .post("/users/new", { data: user })
+      .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   };
@@ -77,7 +77,7 @@ export default function RegistrationPage() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": {m: 1, width: "25ch"},
+        "& > :not(style)": { m: 1, width: "25ch" },
       }}
       noValidate
       autoComplete="off"

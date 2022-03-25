@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../helpers/UserContext";
 import useApplicationData from "../helpers/test_state_helper";
 import StatHistoryTable from "../components/statHistoryTable";
 import EmptyWorkouts from "../components/emptyWorkouts";
@@ -7,15 +8,15 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "../components/styles/card.css";
 
-// import { UserContext } from "../UserContext";
-
 const WORKOUTS = "WORKOUTS";
 const EMPTY = "EMPTY";
 
 export default function ProfilePage() {
   const { state } = useApplicationData();
   const [mode, setMode] = useState(EMPTY);
-  // const { user } = useContext(UserContext);
+
+  const { user } = useContext(UserContext);
+  console.log(user);
 
   useEffect(() => {
     if (state.statHistory.length !== 0 && mode !== WORKOUTS) {
@@ -26,7 +27,7 @@ export default function ProfilePage() {
   return (
     <>
       <h1 className="statList--header">
-        {state.statHistory[0]?.user_name || "Get My Username Later"}{" "}
+        {state.statHistory[0]?.user.name || "Get My Username Later"}{" "}
       </h1>
       {mode === WORKOUTS && (
         <>
