@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // Make an axis post req to that URL
 
@@ -34,35 +34,35 @@ export default function RegistrationPage() {
 
   return (
     <div>
-      <input
+      <input className="in-control"
         name="name"
         type="text"
         placeholder="Name"
         onChange={handleChange}
         value={user.name}
       ></input>
-      <input
+      <input className="in-control"
         name="email"
         type="text"
         placeholder="Email"
         onChange={handleChange}
         value={user.email}
       ></input>
-      <input
+      <input className="in-control"
         name="password"
         type="password"
         placeholder="Password"
         onChange={handleChange}
         value={user.password}
       ></input>
-      <input
+      <input className="in-control"
         name="birthdate"
         type="text"
         placeholder="Birthdate"
         onChange={handleChange}
         value={user.birthdate}
       ></input>
-      <button type="button" onClick={handleSubmit}>
+      <button type="button" onClick={handleSubmit} className="btn-prime">
         Sign up!
       </button>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 export default function LoginPage() {
   const [user, setUser] = useState({
@@ -15,21 +15,21 @@ export default function LoginPage() {
 
   return (
     <div>
-      <input
+      <input className="in-control"
         name="email"
         type="text"
         placeholder="Email"
         onChange={handleChange}
         value={user.email}
       ></input>
-      <input
+      <input className="in-control"
         name="password"
         type="password"
         placeholder="Password"
         onChange={handleChange}
         value={user.password}
       ></input>
-      <button>Log in</button>
+      <button className="btn-prime">Log in</button>
     </div>
   );
 }
