@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import Button from "@mui/material/Button";
-import axios from "axios";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import "./styles/card.css";
+import React, {useState, useEffect, useContext} from 'react'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
+import axios from 'axios'
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import './styles/card.css'
+import { UserContext } from "./UserContext";
+
 
 const style = {
   position: "absolute",
@@ -31,9 +33,11 @@ export default function ExerciseForm(props) {
   const [exercises, setExercises] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [isError, setIsError] = useState(false);
+  const {user} = useContext(UserContext);
+
   const [exerciseStat, setExerciseStat] = useState({
-    name: "",
-    user_id: 1,
+    name: '',
+    user_id: [user.id],
     exercise_id: "",
     weight: "",
     user_reps: "",

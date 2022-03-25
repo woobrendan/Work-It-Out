@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import './styles/card.css'
 import axios from "axios";
 import ExerciseForm from './ExerciseForm'
@@ -10,13 +10,13 @@ import Button from '@mui/material/Button';
 
 export default function WorkoutsNew() {
   const [workout, setWorkout] = useState([]);
+  const navigate = useNavigate();
 
   const handleFinalSubmit = () => {
-    console.log("I submit")
     axios
       .post('http://localhost:8080/workouts/new', {workouts: workout})
       .then(res => {
-        console.log("res:", res)
+        navigate('/profile')
       })
       .catch(err => console.log(err))
   };
@@ -36,7 +36,6 @@ export default function WorkoutsNew() {
       </pre>
       <StatTable list={workout}/>
       <div className="centerButton">
-        <Link to="/profile">
         <Button 
           onClick={handleFinalSubmit}
           variant="contained" 
@@ -44,7 +43,6 @@ export default function WorkoutsNew() {
         >
           Submit Workout
         </Button>
-        </Link>
       </div>
     </>
   );

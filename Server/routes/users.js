@@ -18,7 +18,10 @@ module.exports = (db, token) => {
           console.log(accessToken);
           // create access token with the user info inside of the token
           res.json({ accessToken, user });
+<<<<<<< HEAD
           // res.redirect("/");
+=======
+>>>>>>> 74f1ad8dbf0d65916e5c4e7c748757e46a7bc16f
         } else {
           res.send({ error: "error" });
           return;
@@ -47,7 +50,10 @@ module.exports = (db, token) => {
 
         // create access token with the user info inside of the token
         res.json({ accessToken, user });
+<<<<<<< HEAD
         // res.redirect("/");
+=======
+>>>>>>> 74f1ad8dbf0d65916e5c4e7c748757e46a7bc16f
       })
       .catch((error) => {
         console.log(error);
