@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../components/UserContext";
 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -9,6 +10,7 @@ const axios = require("axios");
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const userContext = useContext(UserContext);
 
   const [user, setUser] = useState({
     email: "",
@@ -26,6 +28,7 @@ export default function LoginPage() {
     axios
       .post("/users/login", { data: user })
       .then(function (response) {
+        userContext.setUser(response.data.user);
         navigate("/");
         console.log(response);
       })
@@ -63,7 +66,7 @@ export default function LoginPage() {
           value={user.password}
         />
       </Box>
-      <Button onClick={handleSubmit}> Log in</Button>
+      <Button onClick={handleSubmit}>Log in</Button>
     </div>
   );
 }

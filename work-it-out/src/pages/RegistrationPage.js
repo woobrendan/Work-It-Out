@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../components/UserContext";
+
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -8,6 +10,7 @@ const axios = require("axios");
 
 export default function RegistrationPage() {
   const navigate = useNavigate();
+  const userContext = useContext(UserContext);
 
   const [user, setUser] = useState({
     name: "",
@@ -27,6 +30,7 @@ export default function RegistrationPage() {
     axios
       .post("/users/new", { data: user })
       .then(function (response) {
+        userContext.setUser(response.data.user);
         navigate("/");
         console.log(response);
       })
@@ -81,7 +85,7 @@ export default function RegistrationPage() {
           onChange={handleChange}
           value={user.birthdate}
         />
-        <Button onClick={handleSubmit}> Sign up!</Button>
+        <Button onClick={handleSubmit}>Sign up!</Button>
       </Box>
     </div>
   );
