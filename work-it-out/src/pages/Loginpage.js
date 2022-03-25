@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   const handleSubmit = () => {
     axios
-      .post("/users/login", { data: user })
+      .post("http://localhost:8080/users/login", { data: user })
       .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
