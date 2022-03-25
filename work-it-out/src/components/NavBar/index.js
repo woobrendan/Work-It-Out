@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import "./NavBar.css";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
@@ -10,6 +10,8 @@ import {UserContext} from "../UserContext";
 
 export default function NavBar() {
   const {user} = useContext(UserContext);
+  const [showAuth, setShowAuth] = useState(false);
+
 
   const linkStyle = {
     textDecoration: "none",
@@ -27,20 +29,22 @@ export default function NavBar() {
         <div>Signed in As {user.name}</div>
       </div>
       <div className="menu">
-        <Link to="/profile" style={linkStyle}>
+        <div onClick={() => setShowAuth(!showAuth)} style={linkStyle}>
           <PersonRoundedIcon sx={{fontSize: 50}} />
-        </Link>
-        <div>
-          <span>
-            <Link to="/login" style={linkStyle}>Login</Link>
-          </span>
         </div>
-        <div>
-          <span>
-            <Link to="/register" style={linkStyle}>Register</Link>
-          </span>
-        </div>
+        {showAuth && <div>
+          <div>
+            <span>
+              <Link to="/login" style={linkStyle}>Login</Link>
+            </span>
+          </div>
+          <div>
+            <span>
+              <Link to="/register" style={linkStyle}>Register</Link>
+            </span>
+          </div>
+        </div>}
       </div>
-    </nav>
+    </nav >
   );
 }
