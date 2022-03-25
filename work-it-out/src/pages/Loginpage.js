@@ -1,15 +1,15 @@
-import React, {useContext, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {UserContext} from "../components/UserContext";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../helpers/UserContext";
 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import '../components/styles/login.css';
-import workoutVideo from "../components/video/workout-short.mp4"
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import '../components/styles/card.css'
+import "../components/styles/login.css";
+import workoutVideo from "../components/video/workout-short.mp4";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import "../components/styles/card.css";
 
 const axios = require("axios");
 
@@ -31,19 +31,18 @@ export default function LoginPage() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:8080/users/login", {data: user})
-      .then(function(response) {
+      .post("http://localhost:8080/users/login", { data: user })
+      .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   };
 
   return (
-
     // <div>
     //   <input className="in-control"
     //     name="email"
@@ -63,14 +62,14 @@ export default function LoginPage() {
 
     <div className="LoginCard">
       <video autoPlay loop muted id="video">
-        <source src={workoutVideo} type='video/mp4' />
+        <source src={workoutVideo} type="video/mp4" />
       </video>
-      <Card sx={{minwidth: 150}}>
+      <Card sx={{ minwidth: 150 }}>
         <CardContent>
           <Box
             component="form"
             sx={{
-              "& > :not(style)": {m: 1, width: "25ch"},
+              "& > :not(style)": { m: 1, width: "25ch" },
             }}
             noValidate
             autoComplete="off"
@@ -96,17 +95,12 @@ export default function LoginPage() {
           </Box>
           <br></br>
           <div className="centerButton">
-            <Button
-              variant="contained"
-              color="warning"
-              onClick={handleSubmit}
-            >
+            <Button variant="contained" color="warning" onClick={handleSubmit}>
               Log in
             </Button>
           </div>
         </CardContent>
       </Card>
-
     </div>
   );
 }

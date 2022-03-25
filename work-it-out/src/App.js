@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NavBar from "./components/NavBar";
@@ -9,7 +9,7 @@ import ExerciseDetails from "./pages/ExerciseDetails";
 import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import WorkoutsNew from "./components/workouts_new";
-import { UserContext } from "./components/UserContext";
+import { UserContext } from "./helpers/UserContext";
 
 function App() {
   const [user, setUser] = useState({
