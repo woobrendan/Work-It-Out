@@ -39,6 +39,7 @@ app.use((req, res, next) => {
 const pool = require("./lib/db.js");
 
 const userRoute = require("./routes/users");
+const workoutRoute = require('./routes/workouts');
 const apiUsers = require("./routes/api/api_users");
 const apiExercises = require("./routes/api/api_exercises");
 const apiMuscleGroups = require("./routes/api/api_muscle_groups");
@@ -47,6 +48,7 @@ const apiStats = require("./routes/api/api_workout_stats");
 const req = require("express/lib/request");
 
 app.use("/users", userRoute(pool, jwt));
+app.use('/workouts', workoutRoute(pool));
 /////  API ROUTES /////
 app.use("/api/users", apiUsers(pool));
 app.use("/api/exercises", apiExercises(pool));

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link } from 'react-router-dom'
 import './styles/card.css'
 import axios from "axios";
 import ExerciseForm from './ExerciseForm'
@@ -8,18 +9,16 @@ import Button from '@mui/material/Button';
 
 
 export default function WorkoutsNew() {
-
   const [workout, setWorkout] = useState([]);
-  const [isError, setIsError] = useState(false);
 
   const handleFinalSubmit = () => {
     console.log("I submit")
-    // axios
-    //   .post('/api/workouts/new', {data: workout})
-    //   .then(res => {
-    //     console.log("res:", res)
-    //   })
-    //   .catch(err => console.log(err))
+    axios
+      .post('http://localhost:8080/workouts/new', {workouts: workout})
+      .then(res => {
+        console.log("res:", res)
+      })
+      .catch(err => console.log(err))
   };
 
   const handleExerciseForm = (values) => {
@@ -28,16 +27,16 @@ export default function WorkoutsNew() {
       setWorkout(workoutCopy) 
   }
 
-
   return (
     <>
     <h1>Create New Workout</h1>
-      <ExerciseForm onClick={handleExerciseForm} isError={isError}/>
+      <ExerciseForm onClick={handleExerciseForm} />
       <pre>
         {JSON.stringify(workout, null, 2)}
       </pre>
       <StatTable list={workout}/>
       <div className="centerButton">
+        <Link to="/profile">
         <Button 
           onClick={handleFinalSubmit}
           variant="contained" 
@@ -45,6 +44,7 @@ export default function WorkoutsNew() {
         >
           Submit Workout
         </Button>
+        </Link>
       </div>
     </>
   );
