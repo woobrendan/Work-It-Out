@@ -5,6 +5,7 @@ import axios from "axios";
 import ExerciseForm from './ExerciseForm'
 import StatTable from "./statTable";
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 
@@ -28,12 +29,12 @@ export default function WorkoutsNew() {
   }
 
   return (
-    <>
-    <h1>Create New Workout</h1>
+    
+    <div className="newWorkout">
+    <Typography variant="h3" gutterBottom component="div">
+        Create New Workout
+      </Typography>
       <ExerciseForm onClick={handleExerciseForm} />
-      <pre>
-        {JSON.stringify(workout, null, 2)}
-      </pre>
       <StatTable list={workout}/>
       <div className="centerButton">
         <Button 
@@ -44,6 +45,7 @@ export default function WorkoutsNew() {
           Submit Workout
         </Button>
       </div>
-    </>
+      </div>
+    
   );
 }
