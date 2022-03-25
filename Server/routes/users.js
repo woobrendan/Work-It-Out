@@ -17,8 +17,7 @@ module.exports = (db, token) => {
           const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
           console.log(accessToken);
           // create access token with the user info inside of the token
-          res.json({ accessToken });
-          res.redirect("/");
+          res.json({ accessToken, user });
         } else {
           res.send({ error: "error" });
           return;
@@ -46,8 +45,7 @@ module.exports = (db, token) => {
         const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
 
         // create access token with the user info inside of the token
-        res.json({ accessToken });
-        res.redirect("/");
+        res.json({ accessToken, user });
       })
       .catch((error) => {
         console.log(error);
