@@ -32,7 +32,7 @@ export default function NavBar() {
         <div onClick={() => setShowAuth(!showAuth)} style={linkStyle}>
           <PersonRoundedIcon sx={{fontSize: 50}} />
         </div>
-        {showAuth && <div>
+        {showAuth && <div className="menu-options">
           <div>
             <span>
               <Link to="/login" style={linkStyle}>Login</Link>
