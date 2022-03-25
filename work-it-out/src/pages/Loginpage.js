@@ -29,13 +29,22 @@ export default function LoginPage() {
     }));
   };
 
+  //localstorage method
+  //get item access data (JSON.pars)
+  // set item stores data
+  // remove item deletes data from local storage
+
   const handleSubmit = () => {
     axios
       .post("http://localhost:8080/users/login", { data: user })
       .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
-        console.log(response);
+        console.log(response.data.accessToken);
+        localStorage.setItem(
+          "accessToken",
+          JSON.stringify(response.data.accessToken)
+        );
       })
       .catch(function (error) {
         console.log(error);

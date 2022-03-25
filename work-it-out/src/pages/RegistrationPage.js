@@ -32,6 +32,10 @@ export default function RegistrationPage() {
       .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
+        localStorage.setItem(
+          "accessToken",
+          JSON.stringify(response.data.accessToken)
+        );
         console.log(response);
       })
       .catch(function (error) {

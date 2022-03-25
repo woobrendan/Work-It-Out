@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import MuscleGroup from "../components/MuscleGroup";
 
 export default function Homepage() {

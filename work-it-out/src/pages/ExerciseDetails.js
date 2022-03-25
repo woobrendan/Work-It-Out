@@ -1,11 +1,12 @@
-import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+import { Link } from "react-router-dom";
 
 export default function ExerciseDetails() {
   const [exercise, setExercise] = useState({});
-  const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     fetch(`http://localhost:8080/api/exercises/${id}`)
       .then((res) => res.json())
@@ -20,11 +21,16 @@ export default function ExerciseDetails() {
       <div>
         <img
           src={exercise.thumbnail}
-          style={{width: "100%", height: "auto"}}
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
       <div>
-        <h2><span>{exercise.name}</span> <a href={`/workout/${id}`}><ArrowBackIcon sx={{fontSize: 60}} /></a></h2>
+        <h2>
+          <span>{exercise.name}</span>
+          <Link to={`/workout/${id}`}>
+            <ArrowBackIcon sx={{ fontSize: 60 }} />
+          </Link>
+        </h2>
         <p className="exercise-content">{exercise.description}</p>
         <br></br>
         <br></br>
