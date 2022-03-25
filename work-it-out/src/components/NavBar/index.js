@@ -15,7 +15,7 @@ export default function NavBar() {
         <Link to="/">
           <h1 className="brand"> Work It Out </h1>
         </Link>
-        <div>Signed in As {user.id}</div>
+        <div>Signed in As {user.name}</div>
       </div>
       <div>
         <Link to="/profile">
