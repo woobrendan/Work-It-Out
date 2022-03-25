@@ -10,10 +10,11 @@ export default function ExerciseDetails() {
     fetch(`http://localhost:8080/api/exercises/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setExercise(data)
+        setExercise(data);
       })
-      .catch(err => console.log(err))
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="exercise-details">
       <div>
