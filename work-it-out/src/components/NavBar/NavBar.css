@@ -9,10 +9,10 @@
   width: 100%;
   z-index: 1;
 }
-
+/* 
 .navbar > div {
-  /* flex: 1; */
-}
+  flex: 1;
+} */
 
 .brand {
   font-size: 2rem;

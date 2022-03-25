@@ -37,7 +37,7 @@ export default function ExerciseForm(props) {
 
   const [exerciseStat, setExerciseStat] = useState({
     name: '',
-    user_id: [user.id],
+    user_id: 1,
     exercise_id: "",
     weight: "",
     user_reps: "",
@@ -111,7 +111,7 @@ export default function ExerciseForm(props) {
 
   return (
     <div className="modalForm">
-      <pre>{JSON.stringify(exerciseStat, null, 2)}</pre>
+
       <Card sx={{ minwidth: 275 }}>
         <CardContent className="cardContent">
           <CardMedia
