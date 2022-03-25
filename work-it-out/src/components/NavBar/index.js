@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import "./NavBar.css";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
+import {positions} from '@mui/system';
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
@@ -15,6 +16,8 @@ export default function NavBar() {
     color: '#333'
   };
 
+
+
   return (
     <nav className="navbar">
       <div>
@@ -23,9 +26,9 @@ export default function NavBar() {
         </Link>
         <div>Signed in As {user.name}</div>
       </div>
-      <div>
+      <div className="menu">
         <Link to="/profile" style={linkStyle}>
-          <PersonRoundedIcon fontSize="large" />
+          <PersonRoundedIcon sx={{fontSize: 50}} />
         </Link>
         <div>
           <span>
