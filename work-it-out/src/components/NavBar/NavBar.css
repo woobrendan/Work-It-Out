@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  /* background-image: linear-gradient(#ffea00, transparent); */
-  background-color: yellow;
+  background-image: linear-gradient(#ffea10, transparent);
+  /* background-color: yellow; */
   padding: 1rem;
   position: fixed;
   top: 0px;
@@ -26,4 +26,9 @@
   font-family: "Major Mono Display", monospace;
   padding-left: 7px;
   font-size: 2.2rem;
+  text-decoration: none;
+}
+
+.menu {
+  text-align: right;
 }
