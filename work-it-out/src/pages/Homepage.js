@@ -12,16 +12,20 @@ export default function Homepage() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
+    <div className="container">
       <h2>Muscles Groups</h2>
-      {workouts.map((workout) => (
-        <MuscleGroup
-          key={workout.id}
-          id={workout.id}
-          image={workout.thumbnail}
-          title={workout.name}
-        />
-      ))}
+      <div className="row">
+        {workouts.map((workout) => (
+          <div>
+            <MuscleGroup
+              key={workout.id}
+              id={workout.id}
+              image={workout.thumbnail}
+              title={workout.name}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
