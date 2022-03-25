@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 export default function ExerciseDetails() {
@@ -22,10 +23,11 @@ export default function ExerciseDetails() {
         />
       </div>
       <div>
-        <h1><span>{exercise.name}</span> <a href={`/workout/${id}`}>Back</a></h1>
+        <h2><span>{exercise.name}</span> <a href={`/workout/${id}`}><ArrowBackIcon sx={{fontSize: 60}} /></a></h2>
         <p className="exercise-content">{exercise.description}</p>
+        <br></br>
+        <br></br>
         <div>
-          <h2>Exercising Video</h2>
           <iframe
             width="100%"
             height="315"
@@ -39,4 +41,4 @@ export default function ExerciseDetails() {
       </div>
     </div>
   );
-
+}
