@@ -28,7 +28,7 @@ export default function RegistrationPage() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:8080/users/new", { data: user })
+      .post("/users/new", { data: user })
       .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
