@@ -5,7 +5,7 @@ import { UserContext } from "../components/UserContext";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-// import workoutVideo from "../components/video/workouts.mp4"
+import workoutVideo from "../components/video/workout.mp4"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import '../components/styles/login.css'
@@ -44,9 +44,9 @@ export default function LoginPage() {
 
   return (
     <div className="LoginCard">
-      {/* <video autoPlay loop muted id="video">
+      <video autoPlay loop muted id="video">
         <source src={workoutVideo} type='video/mp4'/>
-      </video> */}
+      </video>
       <Card sx={{ minwidth: 150 }}>
         <CardContent>
       <Box
