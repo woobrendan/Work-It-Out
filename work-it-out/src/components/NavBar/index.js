@@ -10,7 +10,7 @@ export default function NavBar() {
     <nav className="navbar">
       <div>
         <Link to="/">
-          <h1 className="brand"> Work It Out </h1>
+          <h1 className="brand">Work <span className="dumbbell">  I</span>t Out </h1>
         </Link>
       </div>
       <div>
