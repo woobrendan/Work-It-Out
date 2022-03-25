@@ -101,3 +101,18 @@ h4 a {
   border-color: #eee;
   border-width: 1px;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > div {
+  width: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+  .row > div {
+    width: 50%;
+  }
+}
