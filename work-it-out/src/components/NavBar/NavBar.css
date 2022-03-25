@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(#ffea10, transparent);
-  /* background-color: yellow; */
+  /* background-image: linear-gradient(#ffea00, transparent); */
+  background-color: yellow;
   padding: 1rem;
   position: fixed;
   top: 0px;

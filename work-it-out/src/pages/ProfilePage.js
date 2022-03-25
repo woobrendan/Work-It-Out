@@ -27,7 +27,7 @@ export default function ProfilePage() {
   return (
     <>
       <h1 className="statList--header">
-        {state.statHistory[0]?.user.name || "Get My Username Later"}{" "}
+        {user.name || "Get My Username Later"}{" "}
       </h1>
       {mode === WORKOUTS && (
         <>
