@@ -58,6 +58,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
 }
 
 a {
@@ -79,6 +80,10 @@ h2 a {
   font-size: 1.1rem;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.h4 {
+  text-decoration: none;
 }
 
 .btn-prime:hover {

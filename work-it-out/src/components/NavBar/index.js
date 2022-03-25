@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import "./NavBar.css";
 import {Link} from "react-router-dom";
+import styled from "styled-components";
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
@@ -8,6 +9,7 @@ import {UserContext} from "../UserContext";
 
 export default function NavBar() {
   const {user} = useContext(UserContext);
+
 
   return (
     <nav className="navbar">
