@@ -35,11 +35,7 @@ export default function ExerciseForm(props) {
   const { user } = useContext(UserContext);
 
   const [exerciseStat, setExerciseStat] = useState({
-<<<<<<< HEAD
-    name: '',
-=======
     name: "",
->>>>>>> 0811dda (change to dynamically grab user id)
     user_id: user.id,
     exercise_id: "",
     weight: "",

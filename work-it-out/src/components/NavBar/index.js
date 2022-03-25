@@ -3,13 +3,9 @@ import React, {useContext, useState} from "react";
 
 
 import "./NavBar.css";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-=======
 import {Link} from "react-router-dom";
-// import { UserContext } from '../components/UserContext';
+import { UserContext } from '../components/UserContext';
 import {positions} from '@mui/system';
->>>>>>> 930fb59 (install dependencies, add background image to all pages)
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
