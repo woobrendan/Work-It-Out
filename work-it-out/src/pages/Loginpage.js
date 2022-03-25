@@ -5,6 +5,11 @@ import { UserContext } from "../components/UserContext";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+// import workoutVideo from "../components/video/workouts.mp4"
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import '../components/styles/login.css'
+import '../components/styles/card.css'
 
 const axios = require("axios");
 
@@ -38,7 +43,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="LoginCard">
+      {/* <video autoPlay loop muted id="video">
+        <source src={workoutVideo} type='video/mp4'/>
+      </video> */}
+      <Card sx={{ minwidth: 150 }}>
+        <CardContent>
       <Box
         component="form"
         sx={{
@@ -65,8 +75,19 @@ export default function LoginPage() {
           onChange={handleChange}
           value={user.password}
         />
-      </Box>
-      <Button onClick={handleSubmit}>Log in</Button>
+        </Box>
+        <br></br>
+        <div className="centerButton">
+          <Button 
+            variant="contained"
+            color="warning"
+            onClick={handleSubmit}
+          >
+          Log in
+          </Button>
+        </div>
+      </CardContent>
+      </Card>
     </div>
   );
 }

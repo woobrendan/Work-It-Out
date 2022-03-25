@@ -1,8 +1,13 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(#ffea00, transparent);
+  /* background-image: linear-gradient(#ffea00, transparent); */
+  background-color: yellow;
   padding: 1rem;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
 }
 
 .navbar > div {

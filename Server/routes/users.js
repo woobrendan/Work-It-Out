@@ -11,13 +11,17 @@ module.exports = (db, token) => {
     db.query(`SELECT * FROM users WHERE email = $1;`, [email]).then(
       (result) => {
         if (password === result.rows[0].password) {
-          const user = { name: result.rows[0].name };
-
+          const user = { ...result.rows[0] };
+          delete user.password;
           //create JWT token, serialize user obj
           const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
           console.log(accessToken);
           // create access token with the user info inside of the token
           res.json({ accessToken, user });
+<<<<<<< HEAD
+          // res.redirect("/");
+=======
+>>>>>>> 74f1ad8dbf0d65916e5c4e7c748757e46a7bc16f
         } else {
           res.send({ error: "error" });
           return;
@@ -46,6 +50,10 @@ module.exports = (db, token) => {
 
         // create access token with the user info inside of the token
         res.json({ accessToken, user });
+<<<<<<< HEAD
+        // res.redirect("/");
+=======
+>>>>>>> 74f1ad8dbf0d65916e5c4e7c748757e46a7bc16f
       })
       .catch((error) => {
         console.log(error);
