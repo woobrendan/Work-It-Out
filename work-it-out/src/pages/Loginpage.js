@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import '../components/styles/login.css';
-import workoutVideo from "../components/video/workout.mp4"
+import workoutVideo from "../components/video/workout-short.mp4"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import '../components/styles/card.css'
