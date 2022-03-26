@@ -1,10 +1,6 @@
-
 import React, {useContext, useState} from "react";
-
-
 import "./NavBar.css";
 import {Link} from "react-router-dom";
-import { UserContext } from '../components/UserContext';
 import {positions} from '@mui/system';
 
 // Importing material UI icons
@@ -46,6 +42,11 @@ export default function NavBar() {
             <div>
               <span>
                 <Link to="/register" style={linkStyle}>Register</Link>
+              </span>
+            </div>
+            <div>
+              <span>
+                <Link to="/profile" style={linkStyle}>Profile</Link>
               </span>
             </div>
           </div>}

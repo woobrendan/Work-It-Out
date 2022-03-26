@@ -10,6 +10,7 @@ import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import WorkoutsNew from "./components/workouts_new";
 import { UserContext } from "./helpers/UserContext";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [user, setUser] = useState({
@@ -29,7 +30,8 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/" element={<Homepage />} />
+            <Route path='/' element={<LandingPage />} />
+            <Route path="/muscleGroups" element={<Homepage />} />
             <Route path="/workout/:id" element={<ExercisePage />} />
             <Route path="/exercises/:id" element={<ExerciseDetails />} />
             <Route path="/profile" element={<ProfilePage />} />
