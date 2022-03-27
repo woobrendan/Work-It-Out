@@ -15,6 +15,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import "./styles/card.css";
 import { UserContext } from "../helpers/UserContext";
+import NoUser from "./No_user";
 
 const style = {
   position: "absolute",
@@ -30,7 +31,7 @@ const style = {
 
 export default function ExerciseForm(props) {
   const [exercises, setExercises] = useState([]);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [isError, setIsError] = useState(false);
   const { user } = useContext(UserContext);
 
@@ -110,6 +111,7 @@ export default function ExerciseForm(props) {
 
   return (
     <div className="modalForm">
+      {!user.name && <NoUser />}
       <Card sx={{ minwidth: 275 }}>
         <CardContent className="cardContent">
           <CardMedia

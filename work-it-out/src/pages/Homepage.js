@@ -16,7 +16,7 @@ export default function Homepage() {
       <h2>Muscles Groups</h2>
       <div className="row">
         {workouts.map((workout) => (
-          <div>
+          <div key={workout.id}>
             <MuscleGroup
               key={workout.id}
               id={workout.id}

@@ -19,6 +19,7 @@
 
 .cardContent {
   background-image: linear-gradient(red, yellow);
+  text-align: center;
 }
 
 .EmptyWorkouts {

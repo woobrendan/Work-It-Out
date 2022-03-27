@@ -14,9 +14,7 @@ const EMPTY = "EMPTY";
 export default function ProfilePage() {
   const { state } = useApplicationData();
   const [mode, setMode] = useState(EMPTY);
-
   const { user } = useContext(UserContext);
-  console.log(user);
 
   useEffect(() => {
     if (state.statHistory.length !== 0 && mode !== WORKOUTS) {

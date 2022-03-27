@@ -42,3 +42,11 @@
   padding: 1rem;
   box-shadow: -2px 2px 4px 4px #eee;
 }
+
+.Nav-top-right-container {
+  display: flex;
+}
+
+.Nav-Menu {
+  padding: 12px;
+}

@@ -39,7 +39,6 @@ export default function LoginPage() {
       .then(function (response) {
         userContext.setUser(response.data.user);
         navigate("/");
-        console.log(response.data.accessToken);
         localStorage.setItem(
           "accessToken",
           JSON.stringify(response.data.accessToken)
@@ -51,22 +50,6 @@ export default function LoginPage() {
   };
 
   return (
-    // <div>
-    //   <input className="in-control"
-    //     name="email"
-    //     type="text"
-    //     placeholder="Email"
-    //     onChange={handleChange}
-    //     value={user.email}
-    //   ></input>
-    //   <input className="in-control"
-    //     name="password"
-    //     type="password"
-    //     placeholder="Password"
-    //     onChange={handleChange}
-    //     value={user.password}
-    //   ></input>
-    //   <button className="btn-prime">Log in</button>
 
     <div className="LoginCard">
       <video autoPlay loop muted id="video">
@@ -92,7 +75,7 @@ export default function LoginPage() {
               value={user.email}
             />
             <TextField
-              id="outlined-basic"
+              id="outlined-basic2"
               label="Password"
               variant="outlined"
               name="password"
