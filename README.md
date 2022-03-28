@@ -23,11 +23,11 @@ From within the `Work-It-Out` folder:
 
 ## Creating New Workouts
 
-![Creating New Workout](https://github.com/woobrendan/Finals-Work-It-Out/blob/master/public/docs/new-workout.gif)
+![Creating New Workout](https://github.com/woobrendan/Finals-Work-It-Out/blob/main/work-it-out/public/docs/new-workout.gif?raw=true)
 
 ## Exercise Details
 
-![Exercise Information](https://github.com/woobrendan/Finals-Work-It-Out/blob/master/public/docs/exercise.png)
+![Exercise Information](https://github.com/woobrendan/Finals-Work-It-Out/blob/main/work-it-out/public/docs/exercise-details.png?raw=true)
 
 ## Dependencies
 
