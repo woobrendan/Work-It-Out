@@ -8,6 +8,7 @@ import "../components/styles/login.css";
 import workoutVideo from "../components/video/workout-short.mp4";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import Typography from '@mui/material/Typography';
 import "../components/styles/card.css";
 
 const axios = require("axios");
@@ -28,10 +29,9 @@ export default function LoginPage() {
     }));
   };
 
-  //localstorage method
-  //get item access data (JSON.pars)
-  // set item stores data
-  // remove item deletes data from local storage
+  const handleClick = () => {
+    navigate('/register');
+  }
 
   const handleSubmit = () => {
     axios
@@ -57,6 +57,10 @@ export default function LoginPage() {
       </video>
       <Card sx={{ minwidth: 150 }}>
         <CardContent>
+        <Typography variant="h2" component="div" className="card-title">
+          Login
+        </Typography>
+        <br></br>
           <Box
             component="form"
             sx={{
@@ -90,6 +94,10 @@ export default function LoginPage() {
               Log in
             </Button>
           </div>
+          <br></br>
+          <Typography variant="body1" onClick={handleClick}>
+            Not registered? Sign up here!
+          </Typography>
         </CardContent>
       </Card>
     </div>

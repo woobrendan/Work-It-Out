@@ -1,10 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { useNavigate } from "react-router-dom";
 import ExerciseMenu from "./Exercise_menu";
 import NavMenu from "./Nav_menu";
 
@@ -15,17 +11,6 @@ import { UserContext } from "../../helpers/UserContext";
 export default function NavBar() {
   const { user } = useContext(UserContext);
   const [showAuth, setShowAuth] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate();
-
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const linkStyle = {
     textDecoration: "none",
     color: "#333",

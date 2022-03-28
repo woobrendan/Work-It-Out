@@ -19,7 +19,7 @@ export default function ExerciseDetails() {
 
   return (
     <div className="exercise-details">
-      <div>
+      <div className="exercise-img-container">
         <img
           src={exercise.thumbnail}
           style={{ width: "100%", height: "auto" }}

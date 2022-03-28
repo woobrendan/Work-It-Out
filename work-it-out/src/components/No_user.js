@@ -44,7 +44,7 @@ export default function NoUser() {
             <div className="centerButton">
               <Button
                 variant="contained"
-                color="success"
+                color="warning"
                 onClick={() => navigate('/login')}
               >
                Login

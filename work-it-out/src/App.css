@@ -91,6 +91,13 @@ h4 a {
   height: 100%;
 }
 
+.exercise-img-container {
+  width: 80%;
+  padding: 5%;
+  margin-left: 9%;
+  margin-right: 5%;
+}
+
 .btn-prime {
   padding: 0.5rem 1rem;
   background-color: #333;

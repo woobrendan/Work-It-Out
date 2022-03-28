@@ -49,3 +49,11 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.registration-box {
+  display: flex;
+}
+
+.card-title {
+  color: orange;
+}
