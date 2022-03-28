@@ -31,6 +31,7 @@ From within the `Work-It-Out` folder:
 
 ## Dependencies
 
+```sh
 Front-End
 
 - ReactJS
@@ -38,7 +39,9 @@ Front-End
 - React Bootstrap
 - Axios
 - React-Router-DOM
+```
 
+```sh
 Back-End
 
 - Postgres
@@ -46,3 +49,4 @@ Back-End
 - Dotenv
 - JSON Web Token
 - CORS
+```

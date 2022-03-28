@@ -63,14 +63,14 @@ export default function NavBar() {
                 {!user.name && (
                   <>
                     <div>
-                      <span>
+                      <span onClick={() => setShowAuth(!showAuth)}>
                         <Link to="/login" style={linkStyle}>
                           Login
                         </Link>
                       </span>
                     </div>
                     <div>
-                      <span>
+                      <span onClick={() => setShowAuth(!showAuth)}>
                         <Link to="/register" style={linkStyle}>
                           Register
                         </Link>
@@ -81,7 +81,7 @@ export default function NavBar() {
                 {user.name && (
                   <>
                     <div>
-                      <span>
+                      <span onClick={() => setShowAuth(!showAuth)}>
                         <Link to="/profile" style={linkStyle}>
                           Profile
                         </Link>
