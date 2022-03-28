@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import "../App.css";
 
 import { Link } from "react-router-dom";
 
@@ -34,7 +35,7 @@ export default function ExerciseDetails() {
         <p className="exercise-content">{exercise.description}</p>
         <br></br>
         <br></br>
-        <div>
+        <div className="iFrame-container">
           <iframe
             width="100%"
             height="315"

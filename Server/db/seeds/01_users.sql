@@ -47,7 +47,8 @@ VALUES
 (1),
 (2), 
 (3),
-(1);
+(1),
+(4);
 
 INSERT INTO workout_stats(weight, reps, sets, user_id, exercise_id, workout_id)
 VALUES
