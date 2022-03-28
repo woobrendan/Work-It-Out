@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import NavBar from "./components/NavBar";
@@ -11,6 +11,7 @@ import RegistrationPage from "./pages/RegistrationPage";
 import WorkoutsNew from "./components/workouts_new";
 import { UserContext } from "./helpers/UserContext";
 import LandingPage from "./components/LandingPage";
+import jwt_decode from "jwt-decode";
 
 function App() {
   const [user, setUser] = useState({
@@ -19,6 +20,19 @@ function App() {
     password: "",
     birthdate: "",
   });
+  useEffect(() => {
+    let token = localStorage.getItem("accessToken");
+
+    if (!token) {
+      return;
+    }
+
+    let decoded = jwt_decode(token);
+
+    if (decoded) {
+      setUser({ ...user, ...decoded });
+    }
+  }, []);
 
   const providerValue = { user, setUser };
 
@@ -30,7 +44,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/login" element={<LoginPage />} />
-            <Route path='/' element={<LandingPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/muscleGroups" element={<Homepage />} />
             <Route path="/workout/:id" element={<ExercisePage />} />
             <Route path="/exercises/:id" element={<ExerciseDetails />} />
