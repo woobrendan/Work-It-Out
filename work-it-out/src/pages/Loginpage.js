@@ -55,7 +55,7 @@ export default function LoginPage() {
       <video autoPlay loop muted id="video">
         <source src={workoutVideo} type="video/mp4" />
       </video>
-      <Card sx={{ minwidth: 150 }}>
+      <Card sx={{ minwidth: 150 }} className="login-card">
         <CardContent>
         <Typography variant="h2" component="div" className="card-title">
           Login

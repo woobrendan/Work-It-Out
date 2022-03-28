@@ -57,3 +57,7 @@
 .card-title {
   color: orange;
 }
+
+.login-card {
+  background-image: url("../../../public/images/cubes.png");
+}
