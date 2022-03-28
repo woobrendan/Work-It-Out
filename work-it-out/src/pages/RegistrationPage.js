@@ -36,7 +36,6 @@ export default function RegistrationPage() {
           "accessToken",
           JSON.stringify(response.data.accessToken)
         );
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
@@ -96,7 +95,7 @@ export default function RegistrationPage() {
         value={user.name}
       />
       <TextField
-        id="outlined-basic"
+        id="outlined-basic2"
         label="Email"
         variant="outlined"
         name="email"
@@ -105,7 +104,7 @@ export default function RegistrationPage() {
         value={user.email}
       />
       <TextField
-        id="outlined-basic"
+        id="outlined-basic3"
         label="Password"
         variant="outlined"
         name="password"
@@ -114,7 +113,7 @@ export default function RegistrationPage() {
         value={user.password}
       />
       <TextField
-        id="outlined-basic"
+        id="outlined-basic4"
         label="Birthdate"
         variant="outlined"
         name="birthdate"
