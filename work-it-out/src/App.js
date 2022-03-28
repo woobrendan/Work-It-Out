@@ -15,6 +15,7 @@ import jwt_decode from "jwt-decode";
 
 function App() {
   const [user, setUser] = useState({
+    id: null,
     name: "",
     email: "",
     password: "",

@@ -31,6 +31,11 @@ export default function NavBar() {
     color: "#333",
   };
 
+  const logoutEvent = () => {
+    localStorage.clear();
+    window.location.reload(false);
+  };
+
   return (
     <nav className="navbar ">
       <div className="container">
@@ -84,10 +89,7 @@ export default function NavBar() {
                     </div>
                     <div>
                       <span>
-                        <div
-                          onClick={() => localStorage.clear()}
-                          style={linkStyle}
-                        >
+                        <div onClick={logoutEvent} style={linkStyle}>
                           Logout
                         </div>
                       </span>
