@@ -48,6 +48,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 63px;
+  height: 70vh;
 }
 
 .registration-box {
@@ -60,4 +64,10 @@
 
 .login-card {
   background-image: url("../../../public/images/cubes.png");
+}
+
+/* landing page styles */
+
+.makeStyles-card-6 {
+  width: 50%;
 }
