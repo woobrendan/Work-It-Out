@@ -1,8 +1,5 @@
-import React, {useContext, useState} from "react";
+import React from "react";
 import "../components/NavBar/NavBar.css";
-import {Link} from "react-router-dom";
-// import { UserContext } from '../components/UserContext';
-import {positions} from '@mui/system';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -10,6 +7,7 @@ import Paper from "@mui/material/Paper";
 import {makeStyles} from "@mui/styles";
 import {useNavigate} from 'react-router-dom'
 import '../components/styles/card.css'
+
 
 
 
@@ -90,6 +88,7 @@ export default function LandingPage() {
     )
     return squares;
   }
+
   return (
     <>
       <Paper className={classes.paper} id="LandingCard">
