@@ -53,6 +53,8 @@
   flex-direction: column;
   padding-bottom: 63px;
   height: 70vh;
+  min-width: 90%;
+  margin: 0 auto;
 }
 
 .registration-box {
@@ -75,4 +77,29 @@
 
 .MuiPaper-root {
   background-image: linear-gradient(#ff9100, transparent);
+}
+
+@media only screen and (min-width: 480px) {
+  #LandingCard {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .MuiPaper-root {
+    width: 50%;
+  }
+  .MuiPaper-root p {
+    display: block;
+    width: 100%;
+  }
+
+  .MuiPaper-root {
+    max-width: 33%;
+    max-height: 20%;
+    /* flex: 1; */
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
 }
