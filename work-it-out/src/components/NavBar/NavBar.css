@@ -8,6 +8,7 @@
   top: 0px;
   width: 100%;
   z-index: 1;
+  height: 100px;
 }
 /* 
 .navbar > div {
@@ -51,10 +52,82 @@
   padding: 12px;
 }
 
+.Nav-Menu Button {
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  color: #c94803;
+}
+
+.Nav-Menu Button:hover {
+  border: none;
+  color: #333;
+  background-color: transparent;
+  font-weight: 700;
+}
+
 .chevron {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 0;
   position: relative;
-  top: -0.5rem;
+  top: -0.7rem;
   padding-left: 5px;
 }
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .item-1 {
+    order: -2;
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  .item-2 {
+    order: 2;
+  }
+
+  .item-3 {
+    order: 3;
+  }
+
+  .item-4 {
+    order: 4;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .item-1 {
+    width: 63%;
+    justify-content: flex-start;
+  }
+
+  .item-2 {
+    order: 2;
+  }
+
+  .item-3 {
+    order: 3;
+  }
+
+  .item-4 {
+    order: 4;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .item-1 {
+    width: 73%;
+    justify-content: flex-start;
+  }
+
+  .item-2 {
+    order: 2;
+  }
+
+  .item-3 {
+    order: 3;
+  }
+
+  .item-4 {
+    order: 4;
+  }
+} ;
