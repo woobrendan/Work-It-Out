@@ -22,7 +22,7 @@ export default function ExerciseMenu() {
       aria-haspopup="true"
       aria-expanded={open ? 'true' : undefined}
       onClick={handleClick}
-      variant="contained"
+      variant="outlined"
       color="warning"
       size="small"
     >

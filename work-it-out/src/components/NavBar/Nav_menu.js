@@ -22,7 +22,7 @@ export default function NavMenu() {
       aria-haspopup="true"
       aria-expanded={open ? 'true' : undefined}
       onClick={handleClick}
-      variant="contained"
+      variant="outlined"
       size="small"
       color="warning"
     >
