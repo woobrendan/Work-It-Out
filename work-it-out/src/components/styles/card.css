@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 .EmptyWorkouts,
 .modalForm {
   margin: auto;
@@ -76,7 +82,7 @@
 }
 
 .MuiPaper-root {
-  background-image: linear-gradient(#ff9100, transparent);
+  background-image: linear-gradient(#ff9100, rgb(255, 255, 255));
 }
 
 @media only screen and (min-width: 480px) {
