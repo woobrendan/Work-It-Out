@@ -50,10 +50,6 @@
   display: flex;
 }
 
-.Nav-Menu {
-  padding: 12px;
-}
-
 .Nav-Menu Button {
   font-size: 1rem;
   font-weight: 500;

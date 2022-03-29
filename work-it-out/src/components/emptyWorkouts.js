@@ -17,7 +17,7 @@ export default function EmptyWorkouts() {
           <CardMedia
             component="img"
             height="194"
-            image="https://images.firstpost.com/wp-content/uploads/2020/07/gym-shutterstock-640.jpg"
+            image="https://t4.ftcdn.net/jpg/01/79/81/77/360_F_179817756_QzTocli57q9G6a1Oe7kJtoMS5dNMU8cl.jpg"
             alt="Get Started!"
           />
           <br></br>
