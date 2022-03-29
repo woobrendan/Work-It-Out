@@ -54,7 +54,7 @@ export default function RegistrationPage() {
       <Card sx={{ minwidth: 150 }} className="login-card">
         <CardContent>
           <Typography variant="h2" component="div" className="card-title">
-            Register
+            Registration
           </Typography>
           <br></br>
           <Box
@@ -84,7 +84,7 @@ export default function RegistrationPage() {
               value={user.email}
             />
             <TextField
-              id="outlined-basic2"
+              id="outlined-basic3"
               label="Password"
               variant="outlined"
               name="password"
@@ -93,7 +93,7 @@ export default function RegistrationPage() {
               value={user.password}
             />
             <TextField
-              id="outlined-basic2"
+              id="outlined-basic4"
               label="Birth Date"
               variant="outlined"
               name="birthdate"
