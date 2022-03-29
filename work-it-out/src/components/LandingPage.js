@@ -1,8 +1,5 @@
-import React, {useContext, useState} from "react";
+import React from "react";
 import "../components/NavBar/NavBar.css";
-import {Link} from "react-router-dom";
-// import { UserContext } from '../components/UserContext';
-import {positions} from '@mui/system';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -10,10 +7,6 @@ import Paper from "@mui/material/Paper";
 import { makeStyles } from "@mui/styles";
 import {useNavigate } from 'react-router-dom'
 import '../components/styles/card.css'
-
-
-
-// import { UserContext } from "../../helpers/UserContext";
 
   const useStyles = makeStyles({
     paper: {
@@ -47,19 +40,13 @@ import '../components/styles/card.css'
     }
   });
   
-
-
-  
   export default function LandingPage() {
-
     const classes = useStyles();
     const navigate = useNavigate();
     const Quadrantbuilder = () => {
-    
       const handleClick = (path) => {
         navigate(path)
-    
-      }
+      };
       const titles = [
         {
           name: "Muscle Groups",
@@ -77,19 +64,17 @@ import '../components/styles/card.css'
           name: "Login",
           link: '/login',
         },
-      ]
-      const classes = useStyles();
-  
+      ];
       const squares = titles.map((title, index) => (
           <Card className={classes.card} key={index + 1} onClick={() => handleClick(title.link)} >
             <CardContent>
               <h1>{title.name}</h1>
             </CardContent>
           </Card>
-        )
-      )
+        ))
       return squares;
-    }
+    };
+    
   return (
     <>
      <Paper className={classes.paper} id="LandingCard">
