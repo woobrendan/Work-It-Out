@@ -83,11 +83,22 @@
 
 .MuiPaper-root {
   background-image: linear-gradient(#ff9100, rgb(255, 255, 255));
+  padding: 0;
+  margin: 0;
+}
+div.MuiCardContent-root:hover {
+  border: #fff 3px solid;
+  border-radius: 8px;
 }
 
-.MuiCardContent-root {
+div.MuiCardContent-root {
   height: 100%;
   position: relative;
+  padding: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .MuiCardContent-root h2 {
   position: absolute;
