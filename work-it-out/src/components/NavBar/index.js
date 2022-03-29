@@ -1,15 +1,15 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import "./NavBar.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import ExerciseMenu from "./Exercise_menu";
 import NavMenu from "./Nav_menu";
 
 // Importing material UI icons
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
-import {UserContext} from "../../helpers/UserContext";
+import { UserContext } from "../../helpers/UserContext";
 
 export default function NavBar() {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [showAuth, setShowAuth] = useState(false);
   const linkStyle = {
     textDecoration: "none",
@@ -30,16 +30,16 @@ export default function NavBar() {
               Work <span className="dumbbell"> I</span>t Out{" "}
             </h1>
           </Link>
+          {user.name && (
+            <div>
+              Signed in as:<br></br> {user.name}
+            </div>
+          )}
         </div>
         <div className="Nav-top-right-container item item-2">
           <div className="menu">
-            {user.name && (
-              <div>
-                Signed in as:<br></br> {user.name}
-              </div>
-            )}
             <div onClick={() => setShowAuth(!showAuth)} style={linkStyle}>
-              <PersonRoundedIcon sx={{fontSize: 50}} />
+              <PersonRoundedIcon sx={{ fontSize: 50 }} />
             </div>
             {showAuth && (
               <div className="menu-options">
