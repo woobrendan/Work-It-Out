@@ -21,6 +21,7 @@
   font-weight: 800;
   letter-spacing: -1px;
   text-decoration: none;
+  justify-content: flex-start;
 }
 
 .dumbbell {
@@ -72,6 +73,10 @@
   position: relative;
   top: -0.7rem;
   padding-left: 5px;
+}
+
+.item-1 {
+  justify-content: flex-start;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
