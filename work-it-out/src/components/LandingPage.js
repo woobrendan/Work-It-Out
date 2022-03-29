@@ -70,12 +70,12 @@ import '../components/styles/card.css'
           link: '/Profile',
         },
         {
-          name: "Login",
-          link: '/login',
-        },
-        {
           name: "Create New Workout",
           link: '/workouts/new'
+        },
+        {
+          name: "Login",
+          link: '/login',
         },
       ]
       const classes = useStyles();
