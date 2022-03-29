@@ -16,7 +16,7 @@
 } */
 
 .brand {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: "Sarpanch", sans-serif;
   font-weight: 800;
   letter-spacing: -1px;
@@ -26,7 +26,7 @@
 .dumbbell {
   font-family: "Major Mono Display", monospace;
   padding-left: 7px;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   text-decoration: none;
 }
 

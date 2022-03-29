@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 .EmptyWorkouts,
 .modalForm {
   margin: auto;
@@ -53,6 +59,8 @@
   flex-direction: column;
   padding-bottom: 63px;
   height: 70vh;
+  min-width: 90%;
+  margin: 0 auto;
 }
 
 .registration-box {
@@ -74,5 +82,59 @@
 }
 
 .MuiPaper-root {
-  background-image: linear-gradient(#ff9100, transparent);
+  background-image: linear-gradient(#ff9100, rgb(255, 255, 255));
+  padding: 0;
+  margin: 0;
+}
+div.MuiCardContent-root:hover {
+  border: #fff 3px solid;
+  border-radius: 8px;
+}
+
+div.MuiCardContent-root {
+  height: 100%;
+  position: relative;
+  padding: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.MuiCardContent-root h2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  display: block;
+  min-width: 100%;
+  margin: 0;
+}
+
+@media only screen and (min-width: 480px) {
+  #LandingCard {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .MuiPaper-root {
+    width: 50%;
+  }
+  .MuiPaper-root p {
+    display: block;
+    width: 100%;
+  }
+
+  .MuiPaper-root {
+    max-width: 33%;
+    max-height: 20%;
+    /* flex: 1; */
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+  .MuiCardContent-root {
+    padding: 0;
+  }
 }
