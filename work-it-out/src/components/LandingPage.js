@@ -81,7 +81,7 @@ export default function LandingPage() {
     const squares = titles.map((title, index) => (
       <Card className={classes.card} key={index + 1} onClick={() => handleClick(title.link)} >
         <CardContent>
-          <h1>{title.name}</h1>
+          <h2>{title.name}</h2>
         </CardContent>
       </Card>
     )
