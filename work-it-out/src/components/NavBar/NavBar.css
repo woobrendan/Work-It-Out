@@ -51,3 +51,11 @@
 .Nav-Menu {
   padding: 12px;
 }
+
+.chevron {
+  font-size: 2rem;
+  padding: 0;
+  position: relative;
+  top: -0.5rem;
+  padding-left: 5px;
+}
