@@ -68,12 +68,12 @@ export default function LandingPage() {
         link: '/Profile',
       },
       {
-        name: "Login",
-        link: '/login',
-      },
-      {
         name: "Create New Workout",
         link: '/workouts/new'
+      },
+      {
+        name: "Login",
+        link: '/login',
       },
     ]
     const classes = useStyles();
