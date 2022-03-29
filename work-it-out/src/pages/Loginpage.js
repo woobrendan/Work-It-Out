@@ -8,7 +8,7 @@ import "../components/styles/login.css";
 import workoutVideo from "../components/video/workout-short.mp4";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import "../components/styles/card.css";
 
 const axios = require("axios");
@@ -30,8 +30,8 @@ export default function LoginPage() {
   };
 
   const handleClick = () => {
-    navigate('/register');
-  }
+    navigate("/register");
+  };
 
   const handleSubmit = () => {
     axios
@@ -50,17 +50,16 @@ export default function LoginPage() {
   };
 
   return (
-
     <div className="LoginCard">
       <video autoPlay loop muted id="video">
         <source src={workoutVideo} type="video/mp4" />
       </video>
       <Card sx={{ minwidth: 150 }} className="login-card">
         <CardContent>
-        <Typography variant="h2" component="div" className="card-title">
-          Login
-        </Typography>
-        <br></br>
+          <Typography variant="h2" component="div" className="card-title">
+            Login
+          </Typography>
+          <br></br>
           <Box
             component="form"
             sx={{
@@ -96,7 +95,7 @@ export default function LoginPage() {
           </div>
           <br></br>
           <Typography variant="body1" onClick={handleClick}>
-            Not registered? Sign up here!
+            Not registered? Sign up <u>here</u>!
           </Typography>
         </CardContent>
       </Card>

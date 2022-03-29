@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import "../components/styles/card.css";
 
 const axios = require("axios");
@@ -54,11 +54,10 @@ export default function RegistrationPage() {
       <Card sx={{ minwidth: 150 }} className="login-card">
         <CardContent>
           <Typography variant="h2" component="div" className="card-title">
-              Registration
+            Register
           </Typography>
           <br></br>
           <Box
-            className="registration-box"
             component="form"
             sx={{
               "& > :not(style)": { m: 1, width: "25ch" },
@@ -85,7 +84,7 @@ export default function RegistrationPage() {
               value={user.email}
             />
             <TextField
-              id="outlined-basic3"
+              id="outlined-basic2"
               label="Password"
               variant="outlined"
               name="password"
@@ -94,8 +93,8 @@ export default function RegistrationPage() {
               value={user.password}
             />
             <TextField
-              id="outlined-basic4"
-              label="Birthdate"
+              id="outlined-basic2"
+              label="Birth Date"
               variant="outlined"
               name="birthdate"
               type="text"

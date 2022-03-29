@@ -15,7 +15,6 @@ module.exports = (db, token) => {
           delete user.password;
           //create JWT token, serialize user obj
           const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
-          console.log(accessToken);
           // create access token with the user info inside of the token
           res.json({ accessToken, user });
         } else {
@@ -30,16 +29,20 @@ module.exports = (db, token) => {
   router.post("/new", (req, res) => {
     const newUser = req.body.data;
     const queryString = `INSERT INTO users(name, email, password, birthdate) VALUES($1, $2, $3, $4) RETURNING *;`;
-    const values = [newUser.name, newUser.email, newUser.password, newUser.birthdate];
+    const values = [
+      newUser.name,
+      newUser.email,
+      newUser.password,
+      newUser.birthdate,
+    ];
     return db
       .query(queryString, values)
       .then((result) => {
-
         if (!result) {
           res.send({ error: "error" });
           return;
         }
-        const user = {...newUser, id: result.rows[0].id}
+        const user = { ...newUser, id: result.rows[0].id };
         //create JWT token, serialize user obj
         const accessToken = token.sign(user, process.env.ACCESS_TOKEN_SECRET);
 
