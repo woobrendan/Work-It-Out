@@ -2,7 +2,7 @@ INSERT INTO users (name, email, password, birthdate)
 VALUES ('Matt Campbell', 'matt@gmail.com', 'test', '1995-02-17'),
 ('Maro Engel', 'maroe@hotmail.com', 'test', '1985-08-27'),
 ('Brendan Iribe', 'biribe@occulus.com', 'test', '1979-08-12'),
-('Andrea Caldarelli', 'andrea@lamborghini.com','test', '1990-02-14'),
+('Andrea Caldarelli', 'a@a.com','test', '1990-02-14'),
 ('Rafaelle Marciello', 'rm@mercedes.com', 'test', '1994-12-17');
 
 INSERT INTO muscle_groups (name, thumbnail)
