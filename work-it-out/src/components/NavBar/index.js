@@ -30,7 +30,7 @@ export default function NavBar() {
               Work <span className="dumbbell"> I</span>t Out{" "}
             </h1>
           </Link>
-          {user.name && <div>Signed in as: {user.name}</div>}
+          {/* {user.name && <div>Signed in as: {user.name}</div>} */}
         </div>
         <div className="Nav-top-right-container item item-2">
           <div className="menu">
