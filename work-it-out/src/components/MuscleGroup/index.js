@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 export default function MuscleGroup({title, image, id, type}) {
   let url = `/workout/${id}`;
-  if (type == "exercise") {
+  if (type === "exercise") {
     url = `/exercises/${id}`
   }
 
@@ -15,7 +15,7 @@ export default function MuscleGroup({title, image, id, type}) {
     <Link to={url} style={linkStyle}>
       <div className="muscle-group" >
         <div>
-          <img src={image} />
+          <img src={image} alt={title}/>
         </div>
         <div>
           <h4 >{title}</h4>

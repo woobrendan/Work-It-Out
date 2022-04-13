@@ -23,6 +23,7 @@ export default function ExerciseDetails() {
         <img
           src={exercise.thumbnail}
           style={{ width: "100%", height: "auto" }}
+          alt={exercise.name}
         />
       </div>
       <div>
