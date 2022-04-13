@@ -57,3 +57,5 @@ app.use("/api/workouts", apiWorkouts(pool));
 app.use("/api/workoutStats", apiStats(pool));
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`));
+
+//test comment
