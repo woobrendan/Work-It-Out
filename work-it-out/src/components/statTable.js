@@ -1,17 +1,9 @@
 import React from "react";
-// import "./NavBar.css";
 import "./styles/statList.css";
-import {Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import Table from 'react-bootstrap/Table';
 
-
-// Importing material UI icons
-import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
-import { List } from "@mui/material";
-
 export default function StatTable(props) {
-
   return (
     <Table responsive striped bordered size="md">
       <thead className="thead-dark">
