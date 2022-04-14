@@ -2,12 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = function(db) {
-  router.get('/', (req, res) => {
-    console.log("hit me")
-    res.status(200).json({"title": "Hello World"})
-  })
-  
-  
+ 
   // route = /api/debug/reset
   router.get('/reset', (req, res) => {
     console.log("hit the reset route")
