@@ -2,27 +2,20 @@
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8080;
-// const sassMiddleware = require("./lib/sass-middleware");
+
 const express = require("express");
 const router = express.Router();
 const app = express();
 const morgan = require("morgan");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-// const authenticateToken = require("./helper/authToken");
 const bodyParser = require("body-parser");
 app.use(cors());
 // serve static files (img, css, js) from directoty 'public'
 app.use(express.static("public"));
 app.use(morgan("dev"));
-// app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.urlencoded({ extended: false }));
-
-// app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.use(authenticateToken);
 
 app.use((req, res, next) => {
   const allowedOrigins = ["http://localhost:3002/", "http://localhost:8080/"];
@@ -58,6 +51,6 @@ app.use("/api/workouts", apiWorkouts(pool));
 app.use("/api/workoutStats", apiStats(pool));
 app.use("/api/debug", apiDebug(pool));
 
+
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}`));
 
-//test comment
