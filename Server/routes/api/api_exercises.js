@@ -26,5 +26,6 @@ module.exports = function(db) {
       })
       .catch(err => console.log(err.message));
   });
+
   return router;
 }
